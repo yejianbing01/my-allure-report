@@ -1,0 +1,50 @@
+/* 折叠面板 -- 开始 -- */
+.collapse {
+    width: 100%;
+    color: #000;
+    font-size: 14px;
+    border-top: 1px solid #eceff1;
+    transition: all .3s;
+}
+
+.collapse .collapse-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 15px 7px 10px;
+}
+
+.collapse .collapse-title:hover {
+    background-color: #e4edfe;
+    cursor: pointer;
+}
+
+.collapse-title .collapse-left-icon::before {
+    content: '\e916';
+    font-family: icomoon;
+    font-size: 18px;
+    vertical-align: middle;
+    transition: all .3s;
+}
+
+.collapse-expanded .collapse-left-icon::before {
+    content: '\e914';
+}
+
+
+.collapse-title .collapse-right {
+    font-size: 12px;
+}
+
+/* children */
+.collapse .collapse-content {
+    display: none;
+    width: 100%;
+    padding-left: 20px;
+}
+
+.collapse-expanded .collapse-content {
+    display: block;
+}
+
+/* 折叠面板 -- 结束 -- */

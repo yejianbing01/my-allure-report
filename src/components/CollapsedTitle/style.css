@@ -1,0 +1,24 @@
+.collapsedTitle {
+    display: none;
+    position: absolute;
+    left: 55px;
+    top: 50%;
+    transform: translateY(-50%);
+    align-items: center;
+}
+
+.collapsedTitle .triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent #000 transparent transparent;
+    border-width: 7px;
+    opacity: .7;
+}
+
+.collapsedTitle .title {
+    font-size: 12px;
+    padding: 5px 8px;
+    background-color: #000;
+    opacity: .7;
+}

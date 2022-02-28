@@ -1,0 +1,50 @@
+/* 数据项 */
+.row-item a {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.row-item a:hover {
+    background-color: #e4edfe;
+}
+
+.row-item .row-item_name,
+.row-item .row-item_status {
+    flex: 1;
+}
+
+.row-item .row-item_name {
+    padding: 10px 15px;
+    color: #000;
+}
+
+.row-item .row-item_status {
+    color: #fff;
+    text-align: center;
+    font-style: 12px;
+    padding: 10px 15px;
+    height: 18px;
+    line-height: 18px;
+}
+
+
+.row-item .row-item_status .case-num {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.row-item .row-item_status .failed {
+    background-color: #fd5a3e;
+}
+
+.row-item .row-item_status .passed {
+    background-color: #97cc64;
+}
+
+.row-item .row-item_status .skip {
+    background-color: #aaa;
+}

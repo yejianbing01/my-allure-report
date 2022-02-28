@@ -1,0 +1,70 @@
+/* 测试用例结构树 -- 开始 -- */
+.tree-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eceff1;
+    background: hsla(0, 0%, 94.1%, .2);
+    padding: 0 15px;
+    margin-top: 15px;
+}
+
+.tree-header .tree-header_sorter ,
+.tree-header .tree-header_filter {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+/* 测试用例结构树 -- 结束 -- */
+
+/* 排序 -- 开始 -- */
+.sort-item {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    padding-right: 15px;
+}
+
+.sort-item:hover {
+    cursor: pointer;
+}
+
+.sort-item_icon {
+    display: flex;
+    vertical-align: middle;
+    flex-direction: column;
+    font-family: icomoon;
+    font-size: 24px;
+    line-height: .3em;
+    padding: 0 5px;
+}
+
+.sort-desc .sort-item_name,
+.sort-desc .sort-icon_desc {
+    color: #000;
+}
+
+.sort-asc .sort-item_name,
+.sort-asc .sort-icon_asc {
+    color: #000;
+}
+
+/* 排序 -- 结束 -- */
+
+/* 用例过滤 -- 开始 -- */
+.tree-header_filter {
+    color: #000;
+}
+
+.tree-header_filter .label:hover {
+    cursor: pointer;
+}
+
+/* 用例过滤 -- 结束 -- */
+.tree-content .no-data {
+    color: #999;
+    margin: 2px auto;
+    padding-top: 10px;
+    border-top: 1px solid #eceff1;
+}

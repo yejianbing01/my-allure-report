@@ -1,0 +1,24 @@
+.dashboard {
+    height: inherit;
+    display: flex;
+    flex: 1;
+}
+
+.dashboard .content {
+    flex: 1;
+    overflow: auto;
+}
+
+.widgets-grid {
+    display: flex;
+    height: 100%;
+    padding: 15px 15px 0;
+}
+
+.widgets-grid .widgets-grid_col {
+    flex: 1;
+}
+
+.widgets-grid .widgets-grid_col:nth-child(n+2) {
+    margin-left: 15px;
+}

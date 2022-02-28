@@ -1,0 +1,8 @@
+.empty-view {
+    padding: 10px;
+    text-align: center;
+}
+
+.empty-view p {
+    margin: 25px 0;
+}

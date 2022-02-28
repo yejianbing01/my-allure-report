@@ -1,0 +1,43 @@
+/* TestCaseStatusLabel -- 开始 -- */
+.label {
+    color: #fff;
+    font-size: inherit;
+    padding: 2px 4px 2px 5px;
+    border-radius: 3px;
+    margin: 0 2px;
+}
+
+.label-status-passed {
+    color: #97cc64;
+    border: 1px solid #97cc64;
+    background-color: #fff;
+}
+
+.passed-selected {
+    color: #fff;
+    background-color: #97cc64;
+}
+
+.label-status-failed {
+    color: #fd5a3e;
+    border: 1px solid #fd5a3e;
+    background-color: #fff;
+}
+
+.failed-selected {
+    color: #fff;
+    background-color: #fd5a3e;
+}
+
+.label-status-skip {
+    color: #aaa;
+    border: 1px solid #aaa;
+    background-color: #fff;
+}
+
+.skip-selected {
+    color: #fff;
+    background-color: #aaa;
+}
+
+/* TestCaseStatusLabel -- 结束 -- */

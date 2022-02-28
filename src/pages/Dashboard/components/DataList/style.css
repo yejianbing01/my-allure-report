@@ -1,0 +1,26 @@
+.data-box {
+    width: 100%;
+    border: 1px solid #e5e5e5;
+    margin-bottom: 15px;
+}
+
+/* 数据集标题 */
+.data-box .data-box_title {
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.data-box .data-box_title h2 {
+    font-size: 21px;
+    color: #000;
+    font-weight: 200;
+}
+
+.data-box .data-box_title span {
+    font-size: 16px;
+    font-weight: 200;
+    margin-left: 5px;
+}

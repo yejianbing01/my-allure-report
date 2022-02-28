@@ -1,0 +1,59 @@
+.page-container {
+    display: flex;
+    width: inherit;
+    height: inherit;
+    overflow: auto;
+    flex: 1;
+}
+
+.gutter-resize:hover {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: col-resize;
+}
+
+.gutter-resize .collapse-item:hover,
+.gutter-resize .collapse-title:hover {
+    background-color: #fff;
+    cursor: col-resize;
+}
+
+.page-container .side-left,
+.page-container .side-right {
+    flex: 1;
+    overflow: auto;
+}
+
+.page-container .side-left {
+    min-width: 560px
+}
+
+.page-container .side-right {
+    flex: 2;
+    min-width: 300px
+}
+
+.page-container .gutter {
+    width: 7px;
+    height: inherit;
+    background: #eceff1 url('../../../public/change.png') no-repeat 50%;
+}
+
+.page-container .gutter {
+    cursor: ew-resize;
+}
+
+.page-container .gutter-resize {
+    cursor: col-resize;
+}
+
+.page-container .side-left .header {
+    width: 100%;
+    color: #000;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 0 15px 10px;
+    margin-top: 7px;
+}

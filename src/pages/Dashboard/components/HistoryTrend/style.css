@@ -1,0 +1,8 @@
+.historyTrend-box {
+    display: flex;
+    width: 100%;
+    height: 510px;
+    border: 1px solid #e5e5e5;
+    padding: 15px 15px 0;
+    margin-bottom: 15px;
+}

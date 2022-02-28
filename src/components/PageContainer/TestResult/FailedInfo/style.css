@@ -1,0 +1,9 @@
+.overview-failed_info {
+  overflow: auto;
+  line-height: 1.5;
+  font-family: monospace,serif;
+  font-size: 14px;
+  background-color: #ffe7e6;
+  padding: 20px 15px;
+  white-space: pre;
+}

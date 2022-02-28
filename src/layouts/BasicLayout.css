@@ -1,0 +1,29 @@
+@import url("./reset.css");
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #999;
+}
+
+.basicLayout {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  color: #999;
+  font-size: 14px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.basicLayout .side-nav {
+  height: 100%;
+}
+
+.basicLayout .content {
+  flex: 1;
+  height: 100%;
+  overflow: auto;
+}

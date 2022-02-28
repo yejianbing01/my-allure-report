@@ -1,0 +1,16 @@
+/* TestResult */
+.test-result {
+    width: 100%;
+}
+
+.test-result .test-result_title {
+    display: flex;
+    color: #000;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 15px 15px 10px;
+}
+
+.test-result .test-result_title h2 {
+    margin-left: 10px;
+}

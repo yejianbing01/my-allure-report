@@ -1,0 +1,29 @@
+/* tab切换 -- 开始 -- */
+.switchTabs {
+    width: 100%;
+}
+
+.switchTabs ul {
+    display: flex;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.switchTabs li {
+    font-size: 16px;
+    color: #000;
+    padding: 13.5px 15px;
+    border-bottom: 3px solid transparent;
+    transition: all .15s ease-out;
+}
+
+.switchTabs li:hover {
+    color: red;
+    border-bottom-color: #eceff1;
+    cursor: pointer;
+}
+
+.switchTabs li[class='active'] {
+    border-bottom-color: #000;
+}
+
+/* tab切换 -- 结束 -- */

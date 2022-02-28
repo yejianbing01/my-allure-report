@@ -1,0 +1,133 @@
+.side-nav {
+    position: relative;
+    width: 180px;
+    height: inherit;
+    background-color: #343434;
+    transition: width .2s;
+    /* overflow: hidden; */
+}
+
+/* 导航头部 */
+.side-nav .side-head {
+    padding: 15px 0;
+    /* padding-bottom: 15px; */
+    border-bottom: 1px solid #4d4d4d;
+}
+
+.side-nav .side-head a {
+    display: block;
+    color: #fff;
+    font-size: 26px;
+    line-height: 40px;
+    font-weight: 700;
+    background: url('../../../public/allure.svg') no-repeat 0;
+    background-size: 40px;
+    padding-left: 40px;
+    margin-left: 10px;
+    white-space: nowrap;
+}
+
+.side-nav .side-head a span {
+    padding-left: 15px;
+}
+
+/* 导航内容 */
+.side-nav .side-menu {
+    width: 100%;
+}
+
+.side-nav .side-menu li {
+    position: relative;
+    width: inherit;
+}
+
+.side-nav .side-menu li:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+.side-nav .side-menu li a {
+    padding: 12px 0;
+}
+
+.side-nav .side-menu .side-item-icon {
+    position: absolute;
+    left: 15px;
+    font-size: 22px;
+    font-family: icomoon;
+    vertical-align: middle;
+    margin: 0 3px;
+}
+
+.side-nav .side-menu .side-item-title {
+    padding-left: 55px;
+    padding-right: 7px;
+    line-height: 24px;
+    white-space: nowrap;
+}
+
+/* 导航底部 */
+.side-nav .side-footer {
+    position: absolute;
+    width: 100%;
+    bottom: 30px;
+    padding: 25px 0;
+}
+
+
+.side-nav .side-footer:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+.side-nav .side-footer .side-footer-icon::before {
+    position: absolute;
+    left: 15px;
+    content: '\e901';
+    font-size: 22px;
+    font-family: icomoon;
+    vertical-align: middle;
+    margin: 0 3px;
+    transition: all .3s;
+}
+
+.side-nav .side-footer .side-footer-title {
+    padding-left: 55px;
+    padding-right: 7px;
+    line-height: 24px;
+    white-space: nowrap;
+}
+
+/* 折叠时样式--菜单时图标 */
+.side-nav_collapsed .side-footer .side-footer-icon::before {
+    content: '\e902';
+}
+
+/* 折叠时样式--菜单时图标 */
+.side-nav_collapsed {
+    width: 60px;
+    white-space: nowrap;
+}
+
+.side-nav_collapsed .side-head span,
+.side-nav_collapsed .side-menu .side-item-title,
+.side-nav_collapsed .side-footer .side-footer-title {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.side-nav_collapsed .side-menu li:hover .collapsedTitle,
+.side-nav_collapsed .side-footer:hover .collapsedTitle {
+    display: flex;
+}
+
+.side-nav .side-menu li a {
+  display: block;
+  height: 100%;
+}
+
+.side-nav .side-menu li a[class='active'] {
+    display: block;
+    border-right: 4px solid #64b5f6;
+    color: #fff;
+}

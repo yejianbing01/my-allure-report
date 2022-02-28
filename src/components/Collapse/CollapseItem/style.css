@@ -1,0 +1,51 @@
+/* 测试用例 -- 开始 -- */
+.collapse-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 14px;
+    color: #000;
+    padding: 7px 15px 7px 15px;
+    border-top: 1px solid #eceff1;
+}
+
+.collapse-item-active {
+    background-color: #fffacd;
+}
+
+.collapse-item:hover {
+    background-color: #e4edfe;
+    cursor: pointer;
+}
+
+.collapse-item .collapse-item-left {
+    display: flex;
+    align-items: center;
+}
+
+.collapse-item-left .collapse-item-icon_passed::before {
+    content: '\e91d';
+    font-family: icomoon;
+    color: #97cc64;
+}
+
+.collapse-item-left .collapse-item-icon_failed::before {
+    content: '\e91e';
+    font-family: icomoon;
+    color: #fd5a3e;
+}
+
+.collapse-item-left .collapse-item-icon_skip::before {
+    content: '\e91f';
+    font-family: icomoon;
+    color: #aaa;
+}
+
+.collapse-item-left .collapse-item-order {
+    padding: 0 10px 0 10px;
+}
+
+
+
+/* 测试用例 -- 结束 -- */
