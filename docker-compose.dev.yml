@@ -1,6 +1,6 @@
 version: "3"
 services:
-  report_dev:
+  reportDev:
     build:
       context: ./
       dockerfile: Dockerfile
