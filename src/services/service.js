@@ -71,7 +71,7 @@ export function findTestTaskList({ testJobId }) {
   const query = `
             findTestTaskList:findTestTaskList(
                 search:{testJobId:"${testJobId}"},
-                sort:{execNo: "DESC"}
+                sort:{execNo:DESC}
                 ){
                     success
                     message
