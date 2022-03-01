@@ -7,4 +7,10 @@ services:
     container_name: "report_dev"
     ports:
       - "8082:80"
+    networks:
+      - report-dev
     restart: always
+networks:
+  report-dev:
+    name: report-dev
+    driver: bridge
