@@ -1,9 +1,9 @@
 FROM nginx:latest
 
-COPY ./build /usr/share/nginx/html
+# COPY ./build /usr/share/nginx/html
 
-# 设置权限
-RUN /bin/chmod 755 /usr/share/nginx/html
+# # 设置权限
+# RUN /bin/chmod 755 /usr/share/nginx/html
 
 # 设置时区
 RUN /bin/rm -rf /etc/localtime \
