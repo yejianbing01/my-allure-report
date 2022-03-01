@@ -109,7 +109,7 @@ export function getTestResult({ testTaskId }) {
       trivial: "轻微", // "轻微",
     };
     const failedDataList = Object.entries(statistics)
-      .filter(([key, value]) => value !== 0)
+      .filter(([, value]) => value !== 0)
       .map(([key, value]) => ({
         name: failedNameMapping[key],
         data: { failed: value },
