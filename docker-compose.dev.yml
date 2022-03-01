@@ -1,8 +1,8 @@
-version: "1"
+version: "3"
 services:
   report_dev:
     build:
-      context: .
+      context: ./
       dockerfile: Dockerfile
     container_name: "report_dev"
     ports:
