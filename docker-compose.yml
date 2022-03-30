@@ -1,19 +1,19 @@
 version: "3"
 services:
-  report-dev:
+  report-pre:
     build:
       args:
-        REPORT_ENV: dev
+        REPORT_ENV: pre
       context: ./
       dockerfile: Dockerfile
-    image: report-dev:1.0
-    container_name: "report_dev"
+    image: report-pre:1.0
+    container_name: "report_pre"
     ports:
       - "8082:80"
     networks:
-      - report-dev
+      - report-pre
     restart: always
 networks:
-  report-dev:
-    name: report-dev
+  report-pre:
+    name: report-pre
     driver: bridge
