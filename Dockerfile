@@ -22,6 +22,8 @@ RUN yarn build:$REPORT_ENV
 # 3. 部署nginx
 FROM nginx:stable-alpine
 COPY --from=build /app/build /usr/share/nginx/html
+# nginx 配置
+COPY ./nginx.conf /etc/nginx/nginx.conf
 # 设置权限
 RUN /bin/chmod -R 755 /usr/share/nginx/html
 # 设置时区
