@@ -1,0 +1,19 @@
+version: "3"
+services:
+  report-production:
+    build:
+      args:
+        REPORT_ENV: production
+      context: ./
+      dockerfile: Dockerfile
+    image: report-production:1.0
+    container_name: "report_production"
+    ports:
+      - "8080:80"
+    networks:
+      - report-production
+    restart: always
+networks:
+  report-production:
+    name: report-production
+    driver: bridge
