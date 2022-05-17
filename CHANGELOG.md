@@ -2,6 +2,40 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.1.0 (2022-05-17)
+
+
+### Features
+
+* 生产环境配置 ([17f8a7b](https://git.hzdlsoft.com/autotest/autotest-report/commit/17f8a7bfab94372403db0dc60c5d04b78d42e9d8))
+* 线上环境配置 ([c33e65e](https://git.hzdlsoft.com/autotest/autotest-report/commit/c33e65e336f705722a32d9c7fc080f93e6d22c8b))
+* 增加dockerignore ([d41ad07](https://git.hzdlsoft.com/autotest/autotest-report/commit/d41ad072ee6b5c9d371ff000d488d59432f95dda))
+* add dockerFile ([a668d7b](https://git.hzdlsoft.com/autotest/autotest-report/commit/a668d7b847b5233f7d448f7abe0949166742354f))
+
+
+### Bug Fixes
+
+* 列表接口结构修改 ([e1a552d](https://git.hzdlsoft.com/autotest/autotest-report/commit/e1a552da6ba06650be2bbfd0d11a13519b4200cc))
+* 权限设置 ([37ec0e6](https://git.hzdlsoft.com/autotest/autotest-report/commit/37ec0e648e887de8cb331c134775ea82c3dd9cf6))
+* 容器名不允许大写 ([a2a48e7](https://git.hzdlsoft.com/autotest/autotest-report/commit/a2a48e7acac08eb09f824d1e3cd47126d406b075))
+* 增加预发环境 ([40b1622](https://git.hzdlsoft.com/autotest/autotest-report/commit/40b1622d020be68276016312ddb902768c1fd664))
+* 增加nginx配置，修复刷新404问题 ([8117725](https://git.hzdlsoft.com/autotest/autotest-report/commit/81177255cf3f5959fba467d2aa8308bf0255705f))
+* debug ([1349546](https://git.hzdlsoft.com/autotest/autotest-report/commit/13495460bbe257be76bd07766690bb132dc63b1b))
+* debug ([bf3fbfc](https://git.hzdlsoft.com/autotest/autotest-report/commit/bf3fbfc9da066a339864b5ecce7f9eef8a1aa756))
+* debug ([53d491b](https://git.hzdlsoft.com/autotest/autotest-report/commit/53d491b35a68ff740928d050c3e1d1d472ef96f8))
+* debug dep ([3dfb7e7](https://git.hzdlsoft.com/autotest/autotest-report/commit/3dfb7e733f7d0416dc415479bdab9c8d7aea3e21))
+* docker copy 改挂载 ([18e605f](https://git.hzdlsoft.com/autotest/autotest-report/commit/18e605f19cd0b9a02eef1966785dfc5314fed90b))
+* docker edit ([3bc9a39](https://git.hzdlsoft.com/autotest/autotest-report/commit/3bc9a392a74ef4535ff359a0b3275bbecc17e1e0))
+* docker镜像 瘦身 ([6b31b5d](https://git.hzdlsoft.com/autotest/autotest-report/commit/6b31b5dc5dfef69716767b6f425c64a99747e02c))
+* dockerFile 增加权限设置 ([36f991d](https://git.hzdlsoft.com/autotest/autotest-report/commit/36f991dc1901f75bb54d1040899a13bb256fa78c))
+* nginx 404问题解决 ([0bec22e](https://git.hzdlsoft.com/autotest/autotest-report/commit/0bec22ecb959050c1991b1c85bb1343cb4f4afe9))
+* nginx 配置修改。解决刷新404问题 ([f36b537](https://git.hzdlsoft.com/autotest/autotest-report/commit/f36b537c0d9ff56289019fb6184ab37d6518ae51))
+* queryString 引用去除 ([53d2a07](https://git.hzdlsoft.com/autotest/autotest-report/commit/53d2a07910115fe98967271f0ce49740e6f86eca))
+* set network ([e6c7f6a](https://git.hzdlsoft.com/autotest/autotest-report/commit/e6c7f6a318e62fead9cca6e6c247e34e7e2e64d5))
+* test ([83181a8](https://git.hzdlsoft.com/autotest/autotest-report/commit/83181a86272cf57a56234e42fd496c57074fcc20))
+* test ([5f38183](https://git.hzdlsoft.com/autotest/autotest-report/commit/5f381832ee3c2d2eb954fd50097a3501196a9506))
+* test ([36e8470](https://git.hzdlsoft.com/autotest/autotest-report/commit/36e847025b679870b8bcff519bd88e2735e6a0ad))
+
 ## [1.0.0](https://git.hzdlsoft.com/JinXinhua/slh1i/compare/v1.4.7...v1.0.0) (2022-02-24)
 
 

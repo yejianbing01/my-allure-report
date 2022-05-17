@@ -1,0 +1,19 @@
+version: "3"
+services:
+  report-test:
+    build:
+      args:
+        REPORT_ENV: test
+      context: ./
+      dockerfile: Dockerfile
+    image: report-test:1.0
+    container_name: "report_test"
+    ports:
+      - "8083:80"
+    networks:
+      - report-test
+    restart: always
+networks:
+  report-test:
+    name: report-test
+    driver: bridge

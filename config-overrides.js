@@ -14,7 +14,7 @@ module.exports = override(
   removeModuleScopePlugin(),
   addWebpackPlugin(
     new Dotenv({
-      path: path.resolve(__dirname, `.env.${process.env.REACT_APP_ENV}`),
+      path: path.resolve(__dirname, process.env.REACT_APP_ENV ?`.env.${process.env.REACT_APP_ENV}` : '.env'),
     })
   ),
   addBabelPresets("@babel/preset-react", "@babel/preset-env")

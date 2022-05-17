@@ -12,14 +12,14 @@ export function findTestTreeList({ testTaskId }) {
             ){
                 success
                 message
-                data{
+                dataList {
                     id,
                     suiteTree
                 }
             }
         `;
 
-  return post(`query {${query}}`).then((res) => res.data.findTestTreeList.data);
+  return post(`query {${query}}`).then((res) => res.data.findTestTreeList.dataList);
 }
 
 /**
@@ -75,11 +75,11 @@ export function findTestTaskList({ testJobId }) {
                 ){
                     success
                     message
-                    data {
+                    dataList {
                       execNo,statistics{passes, pending, blocker, critical, normal, minor, trivial,total}
                     }
                 }
             `;
 
-  return post(`query {${query}}`).then((res) => res.data.findTestTaskList.data);
+  return post(`query {${query}}`).then((res) => res.data.findTestTaskList.dataList);
 }
