@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://git.hzdlsoft.com/autotest/autotest-report/compare/v1.1.0...v1.2.0) (2022-06-30)
+
+
+### Features
+
+* 增加生产发布脚本 ([f15e8ad](https://git.hzdlsoft.com/autotest/autotest-report/commit/f15e8ad4d1d907458a128a442ac9964a394d1e9c))
+
 ## 1.1.0 (2022-05-17)
 
 
