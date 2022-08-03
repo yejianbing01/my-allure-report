@@ -5,44 +5,44 @@ import testResult, { getTestSuiteWithSummary, getSortTestItemList, getTestResult
 import { findTestTreeList, getTestTaskDetail } from "../../services/service";
 
 /** 初始状态 */
-const initState = {
-  // 基础数据
-  testJobId: null,
-  testTaskId: null,
-  // 看板-汇总数据
-  summaryData: {
-    env: null,
-    startTime: null,
-    endTime: null,
-    duration: null,
-    totalTestCaseNum: 0,
-    totalNumList: [],
-  },
-  // 看板-测试套统计数据
-  totalDataList: [],
-  // 看板-分类统计数据
-  featuresDataList: [],
-  // 看板-错误分类数据
-  failedDataList: [],
-  // statistics: {
-  //   blocker: 0,
-  //   critical: 0,
-  //   normal: 0,
-  //   minor: 0,
-  //   trivial: 0,
-  // },
-  // 测试套页面数据
-  totalNumList: [],
-  dataList: [],
-  statusList: [PASSED, FAILURE, SKIP],
-  // 分类页面数据
-  sortTestItemList: [],
-  featuresStatusList: [PASSED, FAILURE, SKIP],
-  featuresTotalNumList: [],
-  // 原始数据
-  orgDataList: [],
-  orgSortTestItemList: [],
-};
+// const initState = {
+//   // 基础数据
+//   testJobId: null,
+//   testTaskId: null,
+//   // 看板-汇总数据
+//   summaryData: {
+//     env: null,
+//     startTime: null,
+//     endTime: null,
+//     duration: null,
+//     totalTestCaseNum: 0,
+//     totalNumList: [],
+//   },
+//   // 看板-测试套统计数据
+//   totalDataList: [],
+//   // 看板-分类统计数据
+//   featuresDataList: [],
+//   // 看板-错误分类数据
+//   failedDataList: [],
+//   // statistics: {
+//   //   blocker: 0,
+//   //   critical: 0,
+//   //   normal: 0,
+//   //   minor: 0,
+//   //   trivial: 0,
+//   // },
+//   // 测试套页面数据
+//   totalNumList: [],
+//   dataList: [],
+//   statusList: [PASSED, FAILURE, SKIP],
+//   // 分类页面数据
+//   sortTestItemList: [],
+//   featuresStatusList: [PASSED, FAILURE, SKIP],
+//   featuresTotalNumList: [],
+//   // 原始数据
+//   orgDataList: [],
+//   orgSortTestItemList: [],
+// };
 
 /** 查询测试执行结果 */
 export function getTestResult({ testTaskId }) {
@@ -182,59 +182,6 @@ export function featuresSubStatus(status) {
   };
 }
 
-/** reducer */
-export function reducer(state = initState, action) {
-  switch (action.type) {
-    case FIND_TEST_TREE_LIST:
-      return {
-        ...state,
-        ...action.payload,
-      };
-    case ADD_STATUS:
-      return {
-        ...state,
-        ...handleAddStatus({
-          orgDataList: state.orgDataList,
-          statusList: state.statusList,
-          totalNumList: state.totalNumList,
-          ...action.payload,
-        }),
-      };
-    case SUB_STATUS:
-      return {
-        ...state,
-        ...handleSubStatus({
-          orgDataList: state.orgDataList,
-          statusList: state.statusList,
-          totalNumList: state.totalNumList,
-          ...action.payload,
-        }),
-      };
-    case FEATURES_ADD_STATUS:
-      return {
-        ...state,
-        ...handleFeaturesAddStatus({
-          orgSortTestItemList: state.orgSortTestItemList,
-          statusList: state.featuresStatusList,
-          featuresTotalNumList: state.featuresTotalNumList,
-          ...action.payload,
-        }),
-      };
-    case FEATURES_SUB_STATUS:
-      return {
-        ...state,
-        ...handleFeaturesSubStatus({
-          orgSortTestItemList: state.orgSortTestItemList,
-          statusList: state.featuresStatusList,
-          featuresTotalNumList: state.featuresTotalNumList,
-          ...action.payload,
-        }),
-      };
-    default:
-      return state;
-  }
-}
-
 // ---------- handle ----------
 function getPercent(num, total) {
   return num !== 0 || total !== 0 ? (Math.floor((num / total) * 100) / 100) * 100 : 0;
@@ -322,4 +269,97 @@ function handleFeaturesSubStatus({ orgSortTestItemList, statusList, status, feat
     sortTestItemList,
     featuresTotalNumList: newFeaturesTotalNumList,
   };
+}
+
+/** reducer */
+export function reducer(
+  state = {
+    // 基础数据
+    testJobId: null,
+    testTaskId: null,
+    // 看板-汇总数据
+    summaryData: {
+      env: null,
+      startTime: null,
+      endTime: null,
+      duration: null,
+      totalTestCaseNum: 0,
+      totalNumList: [],
+    },
+    // 看板-测试套统计数据
+    totalDataList: [],
+    // 看板-分类统计数据
+    featuresDataList: [],
+    // 看板-错误分类数据
+    failedDataList: [],
+    // statistics: {
+    //   blocker: 0,
+    //   critical: 0,
+    //   normal: 0,
+    //   minor: 0,
+    //   trivial: 0,
+    // },
+    // 测试套页面数据
+    totalNumList: [],
+    dataList: [],
+    statusList: [PASSED, FAILURE, SKIP],
+    // 分类页面数据
+    sortTestItemList: [],
+    featuresStatusList: [PASSED, FAILURE, SKIP],
+    featuresTotalNumList: [],
+    // 原始数据
+    orgDataList: [],
+    orgSortTestItemList: [],
+  },
+  action
+) {
+  switch (action.type) {
+    case FIND_TEST_TREE_LIST:
+      return {
+        ...state,
+        ...action.payload,
+      };
+    case ADD_STATUS:
+      return {
+        ...state,
+        ...handleAddStatus({
+          orgDataList: state.orgDataList,
+          statusList: state.statusList,
+          totalNumList: state.totalNumList,
+          ...action.payload,
+        }),
+      };
+    case SUB_STATUS:
+      return {
+        ...state,
+        ...handleSubStatus({
+          orgDataList: state.orgDataList,
+          statusList: state.statusList,
+          totalNumList: state.totalNumList,
+          ...action.payload,
+        }),
+      };
+    case FEATURES_ADD_STATUS:
+      return {
+        ...state,
+        ...handleFeaturesAddStatus({
+          orgSortTestItemList: state.orgSortTestItemList,
+          statusList: state.featuresStatusList,
+          featuresTotalNumList: state.featuresTotalNumList,
+          ...action.payload,
+        }),
+      };
+    case FEATURES_SUB_STATUS:
+      return {
+        ...state,
+        ...handleFeaturesSubStatus({
+          orgSortTestItemList: state.orgSortTestItemList,
+          statusList: state.featuresStatusList,
+          featuresTotalNumList: state.featuresTotalNumList,
+          ...action.payload,
+        }),
+      };
+    default:
+      return state;
+  }
 }
