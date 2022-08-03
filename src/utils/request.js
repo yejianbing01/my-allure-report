@@ -17,7 +17,7 @@ const { serviceURL } = require("../../config/serviceUrl");
 //   // },
 // };
 // const Axios = axios.create({ timeout: 10000 });
-axios.defaults.baseURL = "/MBT";
+// axios.defaults.baseURL = "/MBT";
 
 // 计数器
 let requestCount = 0;
