@@ -2,7 +2,7 @@ import axios from "axios";
 import { message } from "antd";
 import store from "../redux/store";
 import { openLoading, closeLoading } from "../redux/actions";
-// import { serviceURL } from "../../config";
+const { serviceURL } = require("../../config/serviceUrl");
 
 // const requestConfig = {
 //   baseURL: serviceURL,
@@ -17,6 +17,7 @@ import { openLoading, closeLoading } from "../redux/actions";
 //   // },
 // };
 // const Axios = axios.create({ timeout: 10000 });
+axios.defaults.baseURL = "/MBT";
 
 // 计数器
 let requestCount = 0;
@@ -89,7 +90,7 @@ axios.interceptors.response.use(
 export function post(queryString, isLoading = true) {
   return axios({
     method: "post",
-    url: "/MBT",
+    url: serviceURL,
     data: { query: queryString },
     isLoading: isLoading,
     headers: {
@@ -112,7 +113,7 @@ export function post(queryString, isLoading = true) {
 export function get(queryString, isLoading = true) {
   return axios({
     method: "get",
-    url: "/MBT",
+    url: serviceURL,
     params: { query: queryString },
     isLoading: isLoading,
     headers: {
