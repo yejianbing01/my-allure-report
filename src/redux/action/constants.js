@@ -11,3 +11,6 @@ export const SELECT_TEST_CASE = "SELECT_TEST_CASE";
 export const DID_TEST_CASE_DETAIL = "DID_TEST_CASE_DETAIL";
 // dashboard 历史记录
 export const FIND_TEST_TASK_LIST = "FIND_TEST_TASK_LIST";
+// 加载状态
+export const OPEN_LOADING = "OPEN_LOADING";
+export const CLOSE_LOADING = "CLOSE_LOADING";
