@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.1](https://git.hzdlsoft.com/autotest/autotest-report/compare/v1.3.0...v1.2.1) (2022-08-03)
+
+## [1.3.0](https://git.hzdlsoft.com/autotest/autotest-report/compare/v1.2.0...v1.3.0) (2022-08-03)
+
+
+### Features
+
+* 1. 按需引入antd 2. 加入loaidng效果 ([08caed8](https://git.hzdlsoft.com/autotest/autotest-report/commit/08caed8f793a326194e0a3af348cbd75acc5b02c))
+
+
+### Bug Fixes
+
+* 编辑器默认设置 ([4c4da6b](https://git.hzdlsoft.com/autotest/autotest-report/commit/4c4da6b6fc2743c8db20de5b32e211045b273d57))
+* 解决axios跨域问题 ([5545400](https://git.hzdlsoft.com/autotest/autotest-report/commit/5545400b8a6fee4356cd57a413aa31d6da3ea903))
+
 ## [1.2.0](https://git.hzdlsoft.com/autotest/autotest-report/compare/v1.1.0...v1.2.0) (2022-06-30)
 
 

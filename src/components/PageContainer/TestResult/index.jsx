@@ -8,6 +8,7 @@ import History from "./History";
 import Retries from "./Retries";
 import EmptyView from "./EmptyView";
 import { PASSED, FAILURE, SKIP } from "../../../../config/constants";
+import { Skeleton } from "antd";
 import "./style.css";
 
 TestResult.propTypes = {
@@ -18,11 +19,14 @@ TestResult.propTypes = {
   level: PropTypes.string,
   testStepList: PropTypes.array,
   testResult: PropTypes.object,
+  isLoading: PropTypes.bool,
 };
 /** 用例详情信息 */
-function TestResult({ id, status, title, duration, level, testStepList, testResult }) {
+function TestResult({ id, status, title, duration, level, testStepList, testResult, isLoading }) {
   const statusMapping = useMemo(() => ({ [PASSED]: "成功", [FAILURE]: "失败", [SKIP]: "跳过" }));
-  return id ? (
+  return isLoading ? (
+    <Skeleton active style={{ padding: "15px 15px 10px" }} />
+  ) : id ? (
     <div className="test-result">
       <div className="test-result_title">
         <StatusLabel status={status} title={statusMapping[status]} selected={true} />
@@ -55,7 +59,7 @@ function TestResult({ id, status, title, duration, level, testStepList, testResu
   );
 }
 
-export default connect(({ testCaseReducer: { id, status, title, duration, level, testResult, testStepList } }) => ({
+export default connect(({ testCaseReducer: { id, status, title, duration, level, testResult, testStepList }, loadingReducer: { isLoading } }) => ({
   id,
   status,
   title,
@@ -63,4 +67,5 @@ export default connect(({ testCaseReducer: { id, status, title, duration, level,
   level,
   testResult,
   testStepList,
+  isLoading,
 }))(TestResult);
