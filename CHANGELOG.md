@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.2](https://git.hzdlsoft.com/autotest/autotest-report/compare/v1.2.1...v1.2.2) (2022-08-19)
+
+
+### Bug Fixes
+
+* 405 ([0efd570](https://git.hzdlsoft.com/autotest/autotest-report/commit/0efd570c7dcd37008c1432142e9f99faca4e08e1))
+* 405问题test ([a6ff79b](https://git.hzdlsoft.com/autotest/autotest-report/commit/a6ff79bcb0f6b1af3007a6b9d992a8fee34f62ff))
+* 405debug ([3d94540](https://git.hzdlsoft.com/autotest/autotest-report/commit/3d94540eb46eb91fe7ade86106d4bbdd3c6c1ed0))
+* 代理测试 ([4b63eed](https://git.hzdlsoft.com/autotest/autotest-report/commit/4b63eeda31e6363a13ad166cfefbe72809a2fde0))
+* 发布文件整理 ([f4c4d8b](https://git.hzdlsoft.com/autotest/autotest-report/commit/f4c4d8ba6be195b5b86998339f5f1c354a310ccf))
+* 请求地址修改-test ([930fc8c](https://git.hzdlsoft.com/autotest/autotest-report/commit/930fc8c985f451ab69aa60ae87bb952496f95ae5))
+* nginx 代理测试 ([c0bfdd0](https://git.hzdlsoft.com/autotest/autotest-report/commit/c0bfdd0b9fe649e2d2296cde830c32c6c99f809f))
+* proxy-test ([e863675](https://git.hzdlsoft.com/autotest/autotest-report/commit/e863675fbaed8042e74e039a11c5164f740419b7))
+* test ([16f9d53](https://git.hzdlsoft.com/autotest/autotest-report/commit/16f9d5388d5819a963389ee9e530656c3c50431d))
+* test ([29b9bea](https://git.hzdlsoft.com/autotest/autotest-report/commit/29b9bea211a0ca8896c6b09d6c682dab53e52f43))
+* test ([2c87906](https://git.hzdlsoft.com/autotest/autotest-report/commit/2c87906748b7a9370ae38b255a14f7d9bab0ca49))
+* test ([2231fdf](https://git.hzdlsoft.com/autotest/autotest-report/commit/2231fdf231c5a8c40a14222c7210a74f6fe8c0f7))
+
 ### [1.2.1](https://git.hzdlsoft.com/autotest/autotest-report/compare/v1.3.0...v1.2.1) (2022-08-03)
 
 ## [1.3.0](https://git.hzdlsoft.com/autotest/autotest-report/compare/v1.2.0...v1.3.0) (2022-08-03)
