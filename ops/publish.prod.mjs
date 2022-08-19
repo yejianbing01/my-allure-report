@@ -19,7 +19,7 @@ import { fs, $ } from "zx";
   const currentImage = `${clientDockerPath}${currentImageTag}.tar`;
 
   console.log("------------ 1.构建镜像 ------------");
-  await $`docker build -f ./Dockerfile -t ${currentImageTag} . --build-arg REPORT_ENV=production`;
+  await $`docker build -f Dockerfile -t ${currentImageTag} . --build-arg REPORT_ENV=production`;
 
   console.log("------------ 2.保存镜像文件到本地 ------------");
   await $`docker save ${currentImageTag} > ${currentImage}`;
@@ -32,7 +32,7 @@ import { fs, $ } from "zx";
     docker ps -a | grep ${containerName} | awk '{print \\$1}' | xargs docker stop
     docker ps -a | grep ${containerName} | awk '{print \\$1}' | xargs docker rm -f
     docker images | grep web | awk '{print \\$3}' | xargs docker rmi -f
-  
+
     docker load < ${remoteServer.dockerImagesPath}/${currentImageTag}.tar
     docker run -d --name ${containerName} -p 8080:80 --restart=always ${currentImageTag}
     exit

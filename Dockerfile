@@ -1,6 +1,6 @@
 # 1. 安装依赖
 FROM node:16-alpine AS node_modules
-WORKDIR /app  
+WORKDIR /app
 COPY ./package.json ./yarn.lock ./
 RUN yarn config set disturl https://npm.taobao.org/dist
 RUN yarn config set registry https://registry.npm.taobao.org
@@ -10,7 +10,7 @@ RUN yarn install
 # 2. 打包
 FROM node:16-alpine AS build
 ARG REPORT_ENV
-WORKDIR /app  
+WORKDIR /app
 RUN yarn config set disturl https://npm.taobao.org/dist
 RUN yarn config set registry https://registry.npm.taobao.org
 RUN yarn config set strict-ssl false
@@ -23,7 +23,7 @@ RUN yarn build:$REPORT_ENV
 FROM nginx:stable-alpine
 COPY --from=build /app/build /usr/share/nginx/html
 # nginx 配置
-COPY ./nginx.conf /etc/nginx/nginx.conf
+COPY ops/nginx.conf /etc/nginx/nginx.conf
 # 设置权限
 RUN /bin/chmod -R 755 /usr/share/nginx/html
 # 设置时区
