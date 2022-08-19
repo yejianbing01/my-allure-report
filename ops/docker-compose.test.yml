@@ -4,7 +4,7 @@ services:
     build:
       args:
         REPORT_ENV: test
-      context: ./
+      context: ../
       dockerfile: Dockerfile
     image: report-test:1.0
     container_name: "report_test"
