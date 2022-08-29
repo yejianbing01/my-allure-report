@@ -18,16 +18,22 @@ import { fs, $ } from "zx";
   const clientDockerPath = "/root/docker-images/";
   const currentImage = `${clientDockerPath}${currentImageTag}.tar`;
 
-  console.log("------------ 1.构建镜像 ------------");
-  await $`docker build -f Dockerfile -t ${currentImageTag} . --build-arg REPORT_ENV=production`;
+  console.log("------------ 1.安装依赖 ------------");
+  await $`yarn`;
 
-  console.log("------------ 2.保存镜像文件到本地 ------------");
+  console.log("------------ 2.webpack打包 ------------");
+  await $`yarn build:production`;
+
+  console.log("------------ 3.构建镜像 ------------");
+  await $`docker build -f Dockerfile -t ${currentImageTag} .`; // --build-arg REPORT_ENV=production
+
+  console.log("------------ 4.保存镜像文件到本地 ------------");
   await $`docker save ${currentImageTag} > ${currentImage}`;
 
-  console.log("------------ 3.复制镜像到生产服务器 ------------");
+  console.log("------------ 5.复制镜像到生产服务器 ------------");
   await $`scp -P ${remoteServer.sshPort} ${currentImage} root@${remoteServer.ip}:${remoteServer.dockerImagesPath}/`;
 
-  console.log("------------ 4.登录生产服务器部署应用 ------------");
+  console.log("------------ 6.登录生产服务器部署应用 ------------");
   await $`ssh root@${remoteServer.ip} -p ${remoteServer.sshPort} << EOF
     docker ps -a | grep ${containerName} | awk '{print \\$1}' | xargs docker stop
     docker ps -a | grep ${containerName} | awk '{print \\$1}' | xargs docker rm -f

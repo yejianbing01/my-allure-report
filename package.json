@@ -27,6 +27,8 @@
     "build:local": "dotenv -e .env.local react-app-rewired build",
     "build:test": "dotenv -e .env.test react-app-rewired build",
     "build:production": "dotenv -e .env.production react-app-rewired build",
+    "publish:test": "node ops/publish.test.mjs",
+    "publish:prod": "node ops/publish.prod.mjs",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
     "release": "node ./standardVersion.js"
@@ -70,6 +72,7 @@
     "postcss-loader": "3.0.0",
     "prettier": "2.5.1",
     "react-app-rewired": "^2.2.1",
-    "standard-version": "^9.3.2"
+    "standard-version": "^9.3.2",
+    "zx": "^7.0.8"
   }
 }
