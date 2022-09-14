@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.3](https://git.hzdlsoft.com/autotest/autotest-report/compare/v1.2.2...v1.2.3) (2022-09-14)
+
+
+### Features
+
+* 修改nodejs环境变量 ([4042f82](https://git.hzdlsoft.com/autotest/autotest-report/commit/4042f821c2bf8dfbd5a65690138f81452830335d))
+
+
+### Bug Fixes
+
+* 测试步骤显示消耗的时间 ([b01ec71](https://git.hzdlsoft.com/autotest/autotest-report/commit/b01ec712daf69ae09600eb393859befcf9f470bd))
+* 修改发版方式 ([28fd81c](https://git.hzdlsoft.com/autotest/autotest-report/commit/28fd81cd5679cbbac373e112d83cd8961eb7afcc))
+
 ### [1.2.2](https://git.hzdlsoft.com/autotest/autotest-report/compare/v1.2.1...v1.2.2) (2022-08-19)
 
 
