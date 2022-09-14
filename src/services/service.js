@@ -34,7 +34,7 @@ export function getTestItemDetail({ id }) {
                   success
                   message
                   data {
-                    id,name,type,flag,level,retries,duration,testResult{data},testStepList{name,content}
+                    id,name,type,flag,level,retries,duration,testResult{data},testStepList{name,content,duration}
                   }
               }
           `;
