@@ -9,6 +9,7 @@ HistoryTrend.propTypes = {
   failedNumList: PropTypes.array,
   skipNumList: PropTypes.array,
 };
+
 /** 历史趋势 */
 export default function HistoryTrend({ historyXAxis, passNumList, failedNumList, skipNumList }) {
   const option = {

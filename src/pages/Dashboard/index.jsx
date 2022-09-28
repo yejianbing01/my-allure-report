@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { findTestTaskList } from "../../redux/actions";
@@ -79,5 +78,5 @@ export default connect(
     failedNumList,
     skipNumList,
   }),
-  (dispatch) => bindActionCreators({ findTestTaskList }, dispatch)
+  { findTestTaskList }
 )(Dashboard);
