@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
 import PropTypes from "prop-types";
 import { featuresAddStatus as addStatus, featuresSubStatus as subStatus, didTestCase } from "../../redux/actions";
 import PageContainer from "../../components/PageContainer";
@@ -34,5 +33,5 @@ export default connect(
     totalNumList: featuresTotalNumList,
     statusList,
   }),
-  (dispatch) => bindActionCreators({ addStatus, subStatus, didTestCase }, dispatch)
+  { addStatus, subStatus, didTestCase }
 )(Features);

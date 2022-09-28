@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { addStatus, subStatus, didTestCase } from "../../redux/actions";
 import PropTypes from "prop-types";
@@ -33,5 +32,5 @@ export default connect(
     dataList,
     statusList,
   }),
-  (dispatch) => bindActionCreators({ addStatus, subStatus, didTestCase }, dispatch)
+  { addStatus, subStatus, didTestCase }
 )(TestSuite);

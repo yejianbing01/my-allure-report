@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import * as ECharts from "echarts";
 import "./style.css";
@@ -13,8 +13,8 @@ Chart.propTypes = {
 };
 
 /** ECharts图表 */
-export default function Chart({
-  renderer = "svg", // svg || canvas
+function Chart({
+  renderer = "canvas", // svg || canvas
   width = "auto",
   height = "auto",
   notMerge = false,
@@ -22,6 +22,7 @@ export default function Chart({
   option,
 }) {
   const EChartRef = useRef();
+  const [chart, setChart] = useState(null);
 
   useEffect(() => {
     // 初始化图表
@@ -30,15 +31,21 @@ export default function Chart({
       width,
       height,
     });
+    setChart(chart);
+    // 监听屏幕缩放，重新绘制 echart 图表
+    window.addEventListener("resize", chart.resize);
+    return () => {
+      chart.dispose();
+      window.removeEventListener("resize", chart.resize);
+    };
+  }, []);
+
+  useEffect(() => {
     // 将传入的配置(包含数据)注入
     chart && chart.setOption(option, notMerge, lazyUpdate);
-    // 监听屏幕缩放，重新绘制 echart 图表
-    chart && window.addEventListener("resize", chart.resize());
-    // 组件卸载前卸载图表
-    return () => {
-      chart && chart.dispose();
-    };
   });
 
   return <div className="summary-EChart" ref={EChartRef}></div>;
 }
+
+export default React.memo(Chart);
