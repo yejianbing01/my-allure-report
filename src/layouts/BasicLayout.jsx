@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
 import { useSearchParams, Outlet } from "react-router-dom";
 import SideNav from "./SideNav";
 import { getTestResult } from "../redux/actions";
@@ -31,4 +30,4 @@ function BasicLayout({ getTestResult }) {
   );
 }
 
-export default connect(null, (dispatch) => bindActionCreators({ getTestResult }, dispatch))(BasicLayout);
+export default connect(null, { getTestResult })(BasicLayout);

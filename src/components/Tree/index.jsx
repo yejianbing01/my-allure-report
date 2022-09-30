@@ -6,7 +6,8 @@ import SorterItem from "./SorterItem";
 import { TEST_SUITE } from "../../../config";
 import "./style.css";
 
-const sortItemList = [{ title: "order" }, { title: "名称" }, { title: "用时" }, { title: "状态" }];
+const sortItemList = [];
+// const sortItemList = [{ title: "order" }, { title: "名称" }, { title: "用时" }, { title: "状态" }];
 
 /**
  * 用例结果树
