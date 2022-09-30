@@ -1,16 +1,19 @@
 import React, { useRef, useEffect } from "react";
+import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import TestResult from "./TestResult";
+import { didTestCase } from "../../redux/actions";
 import "./style.css";
 
 PageContainer.propTypes = {
   title: PropTypes.string,
   children: PropTypes.element,
+  testCaseId: PropTypes.string,
+  didTestCase: PropTypes.func,
 };
 
 /** 页面容器 */
-export default function PageContainer({ title, children }) {
-  const gutterRef = useRef();
+function PageContainer({ title, children, testCaseId, didTestCase }) {
   useEffect(() => {
     const dom = gutterRef.current;
     const parent = gutterRef.current.parentElement;
@@ -43,6 +46,8 @@ export default function PageContainer({ title, children }) {
     };
   }, []);
 
+  const gutterRef = useRef();
+
   return (
     <div className="page-container">
       <div className="side-left">
@@ -52,9 +57,31 @@ export default function PageContainer({ title, children }) {
         <div className="content">{children}</div>
       </div>
       <div className="gutter" ref={gutterRef}></div>
-      <div className="side-right">
+      <div className="side-right" style={{ height: testCaseId ? "100vh" : 0 }}>
         <TestResult />
+        <div className="close-btn" onClick={didTestCase}>
+          关闭
+        </div>
       </div>
+      {/* {testCaseId ? (
+        <div className="side-right">
+          <TestResult />
+          <div className="close-btn" onClick={didTestCase}>
+            关闭
+          </div>
+        </div>
+      ) : (
+        ""
+      )} */}
     </div>
   );
 }
+
+export default connect(
+  ({ testCaseReducer: { id } }) => ({
+    testCaseId: id,
+  }),
+  {
+    didTestCase,
+  }
+)(PageContainer);

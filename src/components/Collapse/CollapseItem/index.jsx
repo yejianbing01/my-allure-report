@@ -1,5 +1,4 @@
 import React, { useCallback, useMemo } from "react";
-import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { PASSED, FAILURE, SKIP } from "../../../../config";
@@ -50,4 +49,4 @@ function CollapseItem(props) {
   );
 }
 
-export default connect(null, (dispatch) => bindActionCreators({ selectTestCase }, dispatch))(CollapseItem);
+export default connect(null, { selectTestCase })(CollapseItem);
