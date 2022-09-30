@@ -1,0 +1,135 @@
+@media screen and (max-width: 1200px) {
+  /* 折叠时样式--菜单时图标 */
+  .side-nav .side-footer .side-footer-icon::before {
+    display: none;
+  }
+
+  /* 折叠时样式--菜单时图标 */
+  .side-nav {
+    width: 60px;
+    white-space: nowrap;
+    color: #fff;
+  }
+
+  .side-nav .side-head span,
+  .side-nav .side-menu .side-item-title,
+  .side-nav .side-footer .side-footer-title {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .side-nav .side-menu li:hover .collapsedTitle,
+  .side-nav .side-footer:hover .collapsedTitle {
+    display: flex;
+  }
+
+  /* .page-container .side-right {
+    display: none !important;
+  } */
+
+}
+
+@media screen and (max-width: 850px) {
+  .widgets-grid {
+    flex-direction: column;
+  }
+
+  .nav {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    width: 100vw;
+    z-index: 100;
+  }
+
+  .nav .side-nav {
+    display: flex;
+    width: 100% !important;
+  }
+
+  .side-nav .side-head,
+  .side-nav .side-footer {
+    display: none;
+  }
+
+  .side-nav .side-menu ul {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    box-shadow: 0px -3px 14px #ccc;
+  }
+
+  .side-nav .side-menu ul li {
+    flex:1
+  }
+
+  .side-nav .side-menu li a {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    padding: 5px;
+  }
+
+  .side-nav .side-menu li a[class='active'] {
+    border: none;
+    color: red;
+  }
+
+  .side-nav .side-menu .side-item-icon {
+    position: unset;
+  }
+
+  .side-nav .side-menu .side-item-title {
+    visibility: visible ;
+    opacity: unset;
+    padding: 0;
+  }
+
+
+  .collapsedTitle {
+    display: none !important;
+  }
+
+  /* 内容区域 */
+  .content .data-box,
+  .content .tree {
+    margin-bottom: 80px;
+  }
+  .content .gutter {
+    display: none;
+  }
+
+  .content .page-container .side-right {
+    display: block !important;
+    position: fixed;
+    z-index: 132;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0,0,0,.5);
+  }
+
+  .content .page-container .side-right .close-btn {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: #97cc64;
+    color: #fff;
+  }
+
+  .content .page-container .side-right .test-result {
+    background-color: #fff;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding-bottom: 30px;
+  }
+
+}
+
+@media screen and (min-width: 850px) {
+  .content .page-container .side-right .close-btn {
+    display: none;
+  }
+}
