@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.7](https://git.hzdlsoft.com/autotest/autotest-report/compare/v1.2.6...v1.2.7) (2022-09-30)
+
+
+### Bug Fixes
+
+* 去除replaceAll 兼容性问题 ([08a252b](https://git.hzdlsoft.com/autotest/autotest-report/commit/08a252b6ede54f6f340ceb2bd5a660907907827d))
+
 ### [1.2.6](https://git.hzdlsoft.com/autotest/autotest-report/compare/v1.2.4...v1.2.6) (2022-09-30)
 
 
