@@ -8,7 +8,7 @@ FailedInfo.propTypes = {
 
 /** 断言失败信息 */
 export default function FailedInfo({ trace }) {
-  const dataList = trace.replaceAll("%n%t", "%n").split("%n");
+  const dataList = trace.replace(/%n%t/g, "%n").split("%n");
 
   return (
     <div className="overview-failed_info">
