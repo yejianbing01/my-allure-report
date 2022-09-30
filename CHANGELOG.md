@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.6](https://git.hzdlsoft.com/autotest/autotest-report/compare/v1.2.4...v1.2.6) (2022-09-30)
+
+
+### Features
+
+* 增加响应式布局 ([729e51b](https://git.hzdlsoft.com/autotest/autotest-report/commit/729e51bf00477988813e8fe9ade3a815514ee4bf))
+
+
+### Bug Fixes
+
+* 用例显示页标题显示问题修复 ([9cef191](https://git.hzdlsoft.com/autotest/autotest-report/commit/9cef1915acdb4518389daa75f108943c55e5a9f5))
+
 ### [1.2.5](https://git.hzdlsoft.com/autotest/autotest-report/compare/v1.2.4...v1.2.5) (2022-09-30)
 
 

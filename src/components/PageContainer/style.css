@@ -27,7 +27,7 @@
 }
 
 .page-container .side-left {
-  /* min-width: 375px */
+  overflow: hidden;
 }
 
 .page-container .side-right {
