@@ -36,16 +36,13 @@ export default function Summary(props) {
         },
         label: {
           show: true,
-          fontSize: "18",
           fontWeight: "bold",
           position: "center",
+          backgroundColor: "#fff",
         },
         emphasis: {
           label: {
-            show: true,
-            fontSize: "22",
-            fontWeight: "bold",
-            backgroundColor: "#fff",
+            fontSize: "20",
           },
         },
         labelLine: {
