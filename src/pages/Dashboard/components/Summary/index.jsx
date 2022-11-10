@@ -5,13 +5,14 @@ import "./style.css";
 
 Summary.propTypes = {
   title: PropTypes.string,
+  subTitle: PropTypes.string,
   time: PropTypes.string,
   totalTestCaseNum: PropTypes.number,
   totalNumList: PropTypes.array,
 };
 /** 汇总信息 */
 export default function Summary(props) {
-  const { title, time, totalTestCaseNum, totalNumList } = props;
+  const { title, subTitle, time, totalTestCaseNum, totalNumList } = props;
 
   const option = {
     tooltip: {
@@ -60,6 +61,7 @@ export default function Summary(props) {
       <div className="summary-stats">
         <div className="summary-stats_title">
           <h2>{title}</h2>
+          <h3>{subTitle}</h3>
           <p>{time}</p>
         </div>
         <div className="summary-stats_total">
