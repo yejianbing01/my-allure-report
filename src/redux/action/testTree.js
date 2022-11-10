@@ -11,7 +11,7 @@ import { findTestTreeList, getTestTaskDetail } from "../../services/service";
 //   testTaskId: null,
 //   // 看板-汇总数据
 //   summaryData: {
-//     env: null,
+//     testJobName: null,
 //     startTime: null,
 //     endTime: null,
 //     duration: null,
@@ -51,7 +51,7 @@ export function getTestResult({ testTaskId }) {
       getTestTaskDetail({ testTaskId }),
       findTestTreeList({ testTaskId }).then((dataList) => dataList.map((data) => data.suiteTree)),
     ]);
-    const { env, startTime, endTime, duration, testJobId, statistics = {} } = testTaskDetail;
+    const { testJobName, serverURLName, serverURL, startTime, endTime, duration, testJobId, statistics = {} } = testTaskDetail;
 
     testResult.create({ testTaskId, suiteTreeList });
     const testSuiteList = getTestSuiteWithSummary(_.cloneDeep(testResult.testSuiteList));
@@ -123,7 +123,9 @@ export function getTestResult({ testTaskId }) {
         testTaskId,
         // 汇总数据
         summaryData: {
-          env,
+          testJobName,
+          serverURLName,
+          serverURL,
           startTime,
           endTime,
           duration,
@@ -279,7 +281,9 @@ export function reducer(
     testTaskId: null,
     // 看板-汇总数据
     summaryData: {
-      env: null,
+      testJobName: null,
+      serverURLName: null,
+      serverURL: null,
       startTime: null,
       endTime: null,
       duration: null,
