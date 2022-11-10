@@ -7,11 +7,10 @@ import { getTestResult } from "../redux/actions";
 import "./BasicLayout.css";
 
 BasicLayout.propTypes = {
-  testJobName: PropTypes.string,
   getTestResult: PropTypes.func,
 };
 /** 带导航布局 */
-function BasicLayout({ testJobName, getTestResult }) {
+function BasicLayout({ getTestResult }) {
   const [params] = useSearchParams();
 
   useEffect(() => {
@@ -22,7 +21,7 @@ function BasicLayout({ testJobName, getTestResult }) {
   return (
     <div className="basicLayout">
       <aside className="nav">
-        <SideNav title={testJobName} />
+        <SideNav title="测试报告" />
       </aside>
       <article className="content">
         <Outlet />
@@ -31,9 +30,4 @@ function BasicLayout({ testJobName, getTestResult }) {
   );
 }
 
-export default connect(
-  ({ testTreeReducer: { summaryData } }) => ({
-    testJobName: summaryData.testJobName,
-  }),
-  { getTestResult }
-)(BasicLayout);
+export default connect(null, { getTestResult })(BasicLayout);
