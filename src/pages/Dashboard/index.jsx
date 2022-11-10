@@ -25,7 +25,7 @@ Dashboard.propTypes = {
 function Dashboard({
   testJobId,
   testTaskId,
-  summaryData: { env, startTime, endTime, duration, totalTestCaseNum, totalNumList },
+  summaryData: { serverURLName, serverURL, startTime, endTime, duration, totalTestCaseNum, totalNumList },
   totalDataList,
   featuresDataList,
   failedDataList,
@@ -45,7 +45,7 @@ function Dashboard({
         <div className="widgets-grid">
           <div className="widgets-grid_col">
             <Summary
-              title={env}
+              title={serverURL ? `${serverURLName}: ${serverURL}` : ""}
               time={endTime ? `${startTime} ~ ${endTime}(${durationToString(duration)})` : startTime}
               {...{ totalTestCaseNum, totalNumList }}
             />
