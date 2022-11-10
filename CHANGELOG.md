@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.8](https://git.hzdlsoft.com/autotest/autotest-report/compare/v1.2.7...v1.2.8) (2022-11-10)
+
+
+### Bug Fixes
+
+* 测试任务名称显示 ([8b71b38](https://git.hzdlsoft.com/autotest/autotest-report/commit/8b71b38eef82c05e923ba6e0675ba95979df5cf2))
+* 测试用例通过率显示问题修改 ([82d5fb2](https://git.hzdlsoft.com/autotest/autotest-report/commit/82d5fb23ee8f2d37a5be3043aa01a118a584e067))
+
 ### [1.2.7](https://git.hzdlsoft.com/autotest/autotest-report/compare/v1.2.6...v1.2.7) (2022-09-30)
 
 
