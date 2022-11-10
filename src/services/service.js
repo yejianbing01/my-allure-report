@@ -54,7 +54,7 @@ export function getTestTaskDetail({ testTaskId }) {
                     success
                     message
                     data {
-                      id,env,duration,startTime,endTime,testJobId,statistics{blocker,critical,normal,minor,trivial}
+                      id,duration,startTime,endTime,testJobId,testJobName,serverURLName,serverURL,statistics{blocker,critical,normal,minor,trivial}
                     }
                 }
             `;

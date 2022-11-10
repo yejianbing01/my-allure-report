@@ -23,11 +23,11 @@ const navDataList = [
 ];
 
 SideNav.propTypes = {
-  clickHandle: PropTypes.func,
+  title: PropTypes.string,
 };
 
 /** 左侧导航栏 */
-export default function SideNav() {
+export default function SideNav({ title }) {
   const [fold, setFold] = useState(false);
   const [params] = useSearchParams();
   const testTaskId = params.get("testTaskId");
@@ -36,7 +36,7 @@ export default function SideNav() {
     <div className={fold ? "side-nav side-nav_collapsed" : "side-nav"}>
       <div className="side-head">
         <NavLink to={`/?testTaskId=${testTaskId}`}>
-          <span>测试报告</span>
+          <span>{title}</span>
         </NavLink>
       </div>
       <div className="side-menu">
