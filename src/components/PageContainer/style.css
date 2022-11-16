@@ -1,7 +1,6 @@
 .page-container {
   display: flex;
-  width: inherit;
-  height: inherit;
+  height: 100%;
   overflow: auto;
   flex: 1;
 }
@@ -20,19 +19,21 @@
   cursor: col-resize;
 }
 
+.page-container .side-left {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 15px;
+}
+
 .page-container .side-left,
 .page-container .side-right {
   flex: 1;
   overflow: auto;
 }
 
-.page-container .side-left {
-  overflow: hidden;
-}
 
 .page-container .side-right {
   flex: 2;
-  /* min-width: 300px */
 }
 
 .page-container .gutter {
