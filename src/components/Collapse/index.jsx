@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import PropTypes from "prop-types";
 import StatusLabel from "../StatusLabel";
 import { PASSED, FAILURE, SKIP } from "../../../config";
@@ -20,6 +20,9 @@ Collapse.propTypes = {
 /** 折叠面板 */
 export default function Collapse(props) {
   const { title, passedNum, failedNum, skipNum, duration, children } = props;
+
+  const [expanded, setExpanded] = useState(false);
+
   const handleClick = useCallback((e) => {
     const nextEle = e.currentTarget.nextElementSibling;
     if (!nextEle.style.display || nextEle.style.display === "none") {
@@ -29,6 +32,7 @@ export default function Collapse(props) {
       nextEle.style.display = "none";
       e.currentTarget.classList.remove("collapse-expanded");
     }
+    setExpanded(!expanded);
   }, []);
 
   return (
@@ -45,7 +49,7 @@ export default function Collapse(props) {
           {duration ? <span>{durationToString(duration)}</span> : ""}
         </div>
       </div>
-      <div className="collapse-content">{children}</div>
+      <div className="collapse-content">{expanded ? children : null}</div>
     </div>
   );
 }

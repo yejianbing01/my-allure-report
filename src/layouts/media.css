@@ -86,7 +86,6 @@
     padding: 0;
   }
 
-
   .collapsedTitle {
     display: none !important;
   }
@@ -124,6 +123,26 @@
     max-height: 80vh;
     overflow-y: auto;
     padding-bottom: 30px;
+  }
+
+  .content .summary-box {
+    height: 500px;
+    flex-direction: column;
+  }
+
+  .content .summary-box .summary-stats {
+    border-bottom: 1px dotted #e5e5e5;
+  }
+
+  .content .widgets-grid .widgets-grid_col .data-box {
+    margin-bottom: 15px;
+  }
+
+  .content .widgets-grid .widgets-grid_col:nth-child(2) {
+    margin-left: 0;
+  }
+  .content .widgets-grid .widgets-grid_col:nth-child(2) .data-box {
+    margin-bottom: 80px;
   }
 
 }
