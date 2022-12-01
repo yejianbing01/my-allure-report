@@ -186,7 +186,7 @@ export function featuresSubStatus(status) {
 
 // ---------- handle ----------
 function getPercent(num, total) {
-  return num !== 0 || total !== 0 ? (Math.floor((num / total) * 100) / 100) * 100 : 0;
+  return num !== 0 || total !== 0 ? Math.ceil((num / total) * 100) : 0;
 }
 
 function handleAddStatus({ orgDataList, statusList, status, totalNumList }) {
