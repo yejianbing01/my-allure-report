@@ -22,6 +22,7 @@ export default function HistoryTrend({ historyXAxis, passNumList, failedNumList,
     },
     tooltip: {
       trigger: "axis",
+      className: "historyToolTip",
       axisPointer: {
         type: "cross",
         label: {
@@ -35,7 +36,7 @@ export default function HistoryTrend({ historyXAxis, passNumList, failedNumList,
       left: "3%",
       right: "4%",
       bottom: "3%",
-      containLabel: true,
+      c: true,
     },
     color: ["#fd5a3e", "#aaa", "#97cc64"],
     yAxis: {

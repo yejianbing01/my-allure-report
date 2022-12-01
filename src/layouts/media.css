@@ -125,10 +125,10 @@
     padding-bottom: 30px;
   }
 
-  .content .summary-box {
-    height: 500px;
-    flex-direction: column;
-  }
+  /* .content .summary-box { */
+  /* height: 500px; */
+  /* flex-direction: column; */
+  /* } */
 
   .content .summary-box .summary-stats {
     border-bottom: 1px dotted #e5e5e5;
@@ -145,6 +145,13 @@
     margin-bottom: 80px;
   }
 
+}
+
+@media screen and (max-width: 500px) {
+  .content .summary-box {
+    height: 500px;
+    flex-direction: column;
+  }
 }
 
 @media screen and (min-width: 850px) {
