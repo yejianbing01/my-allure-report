@@ -19,7 +19,7 @@ export default function Summary(props) {
       trigger: "item",
     },
     legend: {
-      bottom: "1%",
+      bottom: "0",
       left: "center",
     },
     color: ["#97cc64", "#fd5a3e", "#aaa"],

@@ -22,6 +22,7 @@ export default function HistoryTrend({ historyXAxis, passNumList, failedNumList,
     },
     tooltip: {
       trigger: "axis",
+      className: "historyToolTip",
       axisPointer: {
         type: "cross",
         label: {
