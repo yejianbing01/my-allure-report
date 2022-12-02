@@ -48,4 +48,4 @@ function Chart({
   return <div className="summary-EChart" ref={EChartRef}></div>;
 }
 
-export default React.memo(Chart);
+export default Chart;

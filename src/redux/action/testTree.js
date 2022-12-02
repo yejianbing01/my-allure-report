@@ -58,23 +58,26 @@ export function getTestResult({ testTaskId }) {
     const testResultSummary = getTestResultSummary(testSuiteList);
     const sortTestItemList = getSortTestItemList(testSuiteList);
     const { total: totalTestCaseNum, PASSED: passedTestCase, FAILURE: failedTestCase, SKIP: skipTestCase } = testResultSummary;
+    const passPercent = getPercent(passedTestCase.num, totalTestCaseNum);
+    const failedPercent = 100 - passPercent;
+    const skipPercent = 100 - passPercent - failedPercent;
     const totalNumList = [
       {
         status: PASSED,
         value: passedTestCase.num,
-        percent: `通过${getPercent(passedTestCase.num, totalTestCaseNum)}%`,
+        percent: `通过${passPercent}%`,
         selected: true,
       },
       {
         status: FAILURE,
         value: failedTestCase.num,
-        percent: `失败${getPercent(failedTestCase.num, totalTestCaseNum)}%`,
+        percent: `失败${failedPercent}%`,
         selected: true,
       },
       {
         status: SKIP,
         value: skipTestCase.num,
-        percent: `跳过${getPercent(skipTestCase.num, totalTestCaseNum)}%`,
+        percent: `跳过${skipPercent}%`,
         selected: true,
       },
     ];
@@ -186,7 +189,16 @@ export function featuresSubStatus(status) {
 
 // ---------- handle ----------
 function getPercent(num, total) {
-  return num !== 0 || total !== 0 ? (Math.floor((num / total) * 100) / 100) * 100 : 0;
+  if (num == 0 || total == 0) {
+    return 0;
+  } else {
+    const percent = (num / total) * 100;
+    if (percent < 1) {
+      return 1;
+    } else {
+      return Math.floor(percent);
+    }
+  }
 }
 
 function handleAddStatus({ orgDataList, statusList, status, totalNumList }) {
