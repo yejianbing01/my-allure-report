@@ -36,7 +36,7 @@ export default function HistoryTrend({ historyXAxis, passNumList, failedNumList,
       left: "3%",
       right: "4%",
       bottom: "3%",
-      c: true,
+      containLabel: true,
     },
     color: ["#fd5a3e", "#aaa", "#97cc64"],
     yAxis: {

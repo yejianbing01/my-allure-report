@@ -16,7 +16,7 @@
 }
 
 .widgets-grid .widgets-grid_col {
-  flex: 1;
+  width: 50%;
 }
 
 .widgets-grid .widgets-grid_col:nth-child(n+2) {
