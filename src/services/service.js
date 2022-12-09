@@ -48,18 +48,18 @@ export function getTestItemDetail({ id }) {
  */
 export function getTestTaskDetail({ testTaskId }) {
   const query = `
-            getTestTreeDetail:getTestTaskDetail(
+            getTestTaskDetail:getTestTaskDetail(
                 search:{id:"${testTaskId}"},
                 ){
                     success
                     message
                     data {
-                      id,duration,startTime,endTime,testJobId,testJobName,serverURLName,serverURL,statistics{blocker,critical,normal,minor,trivial}
+                      id,duration,startTime,endTime,testJobId,testJobName,serverURLName,serverURL,statistics{blocker,critical,normal,minor,trivial},apiFoxResultList
                     }
                 }
             `;
 
-  return post(`query {${query}}`).then((res) => res.data.getTestTreeDetail.data);
+  return post(`query {${query}}`).then((res) => res.data.getTestTaskDetail.data);
 }
 
 /**
