@@ -128,8 +128,8 @@ export function getTestResult({ testTaskId }) {
       const apiFoxResultOrg = JSON.parse(apiFoxResultList[0].replace(/'/g, '"'))?.result;
       const { total, pending, failed } = apiFoxResultOrg.stats.requests;
       const failedPercent = getPercent(failed, total);
-      const passPercent = getPercent(total - failed, total);
       const skipPercent = getPercent(pending, total);
+      const passPercent = 100 - failedPercent - skipPercent;
 
       apiFoxResult.apiFoxTotalTestCaseNum = total;
       apiFoxResult.apiFoxTotalNumList = [
