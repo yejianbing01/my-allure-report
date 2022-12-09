@@ -86,7 +86,8 @@ function Dashboard({
             <>
               <div className="widgets-grid_col">
                 <Summary
-                  title={testJobName ? `${testJobName}(${serverURL})` : ""}
+                  title={"基于模型测试"}
+                  subTitle={testJobName ? `${testJobName}(${serverURL})` : ""}
                   time={endTime ? `${startTime} ~ ${endTime}(${durationToString(duration)})` : startTime}
                   {...{ totalTestCaseNum, totalNumList }}
                 />

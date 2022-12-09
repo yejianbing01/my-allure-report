@@ -119,13 +119,13 @@ export function getTestResult({ testTaskId }) {
       }));
 
     // apiFox 数据处理
-    const apiFoxResultOrg = JSON.parse(apiFoxResultList[0].replace(/'/g, '"'))?.result;
     const apiFoxResult = {
       apiFoxTotalTestCaseNum: 0,
       apiFoxTotalNumList: [],
       apiFoxTestItemList: [],
     };
-    if (apiFoxResultOrg) {
+    if (apiFoxResultList[0]) {
+      const apiFoxResultOrg = JSON.parse(apiFoxResultList[0].replace(/'/g, '"'))?.result;
       const { total, pending, failed } = apiFoxResultOrg.stats.requests;
       const failedPercent = getPercent(failed, total);
       const passPercent = getPercent(total - failed, total);
