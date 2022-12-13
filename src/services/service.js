@@ -76,7 +76,7 @@ export function findTestTaskList({ testJobId }) {
                     success
                     message
                     dataList {
-                      execNo,statistics{passes, pending, blocker, critical, normal, minor, trivial,total}
+                      execNo,statistics{passes, pending, blocker, critical, normal, minor, trivial,total},apiFoxResultList
                     }
                 }
             `;

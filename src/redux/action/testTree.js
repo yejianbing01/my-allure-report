@@ -153,7 +153,7 @@ export function getTestResult({ testTaskId }) {
         },
       ];
 
-      const testItemList = apiFoxResultOrg.failures.map((ele, index) => ({ id: index, name: ele.test, flag: FAILURE }));
+      const testItemList = apiFoxResultOrg.failures.map((ele) => ({ name: ele.test, flag: FAILURE }));
       apiFoxResult.apiFoxTestItemList = testItemList;
     }
 

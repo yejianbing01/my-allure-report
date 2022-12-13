@@ -55,55 +55,83 @@ function Dashboard({
     return () => didTestCase();
   }, []);
 
-  return (
-    <div className="dashboard">
-      <div className="content">
-        <div className="widgets-grid">
-          {apiFoxTotalTestCaseNum ? (
-            <>
-              <div className="widgets-grid_col">
-                <Summary
-                  title={"基于模型测试"}
-                  subTitle={testJobName ? `${testJobName}(${serverURL})` : ""}
-                  time={endTime ? `${startTime} ~ ${endTime}(${durationToString(duration)})` : startTime}
-                  {...{ totalTestCaseNum, totalNumList }}
-                />
-                <DataList title={"测试套"} dataList={totalDataList} link={`/testSuite?testTaskId=${testTaskId}`} />
-                <DataList title={"分类"} dataList={featuresDataList} link={`/feature?testTaskId=${testTaskId}`} />
-                <HistoryTrend {...{ historyXAxis, passNumList, failedNumList, skipNumList }} />
-                <DataList title={"错误类别"} dataList={failedDataList} link={`/feature?testTaskId=${testTaskId}`} />
-              </div>
-              <div className="widgets-grid_col">
-                <Summary
-                  title={testJobName ? `接口冒烟测试` : ""}
-                  time={endTime ? `${startTime} ~ ${endTime}(${durationToString(duration)})` : startTime}
-                  {...{ totalTestCaseNum: apiFoxTotalTestCaseNum, totalNumList: apiFoxTotalNumList }}
-                />
-                <Tree {...{ dataList: apiFoxTestItemList, totalNumList: apiFoxTotalNumList, statusList, addStatus, subStatus }} />
-              </div>
-            </>
-          ) : (
-            <>
-              <div className="widgets-grid_col">
-                <Summary
-                  title={"基于模型测试"}
-                  subTitle={testJobName ? `${testJobName}(${serverURL})` : ""}
-                  time={endTime ? `${startTime} ~ ${endTime}(${durationToString(duration)})` : startTime}
-                  {...{ totalTestCaseNum, totalNumList }}
-                />
-                <DataList title={"测试套"} dataList={totalDataList} link={`/testSuite?testTaskId=${testTaskId}`} />
-                <DataList title={"分类"} dataList={featuresDataList} link={`/feature?testTaskId=${testTaskId}`} />
-              </div>
-              <div className="widgets-grid_col">
-                <HistoryTrend {...{ historyXAxis, passNumList, failedNumList, skipNumList }} />
-                <DataList title={"错误类别"} dataList={failedDataList} link={`/feature?testTaskId=${testTaskId}`} />
-              </div>
-            </>
-          )}
+  if (!apiFoxTotalTestCaseNum && serverURL) {
+    return (
+      <div className="dashboard">
+        <div className="content">
+          <div className="widgets-grid">
+            <div className="widgets-grid_col">
+              <Summary
+                title={"基于模型测试"}
+                subTitle={testJobName ? `${testJobName}(${serverURL})` : ""}
+                time={endTime ? `${startTime} ~ ${endTime}(${durationToString(duration)})` : startTime}
+                {...{ totalTestCaseNum, totalNumList }}
+              />
+              <DataList title={"测试套"} dataList={totalDataList} link={`/testSuite?testTaskId=${testTaskId}`} />
+              <DataList title={"分类"} dataList={featuresDataList} link={`/feature?testTaskId=${testTaskId}`} />
+            </div>
+            <div className="widgets-grid_col">
+              <HistoryTrend {...{ historyXAxis, passNumList, failedNumList, skipNumList }} />
+              <DataList title={"错误类别"} dataList={failedDataList} link={`/feature?testTaskId=${testTaskId}`} />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
+
+  if (apiFoxTotalTestCaseNum && serverURL) {
+    return (
+      <div className="dashboard">
+        <div className="content">
+          <div className="widgets-grid">
+            <div className="widgets-grid_col">
+              <Summary
+                title={"基于模型测试"}
+                subTitle={testJobName ? `${testJobName}(${serverURL})` : ""}
+                time={endTime ? `${startTime} ~ ${endTime}(${durationToString(duration)})` : startTime}
+                {...{ totalTestCaseNum, totalNumList }}
+              />
+              <HistoryTrend {...{ historyXAxis, passNumList, failedNumList, skipNumList }} />
+            </div>
+            <div className="widgets-grid_col">
+              <Summary
+                title={testJobName ? `接口冒烟测试` : ""}
+                time={endTime ? `${startTime} ~ ${endTime}(${durationToString(duration)})` : startTime}
+                {...{ totalTestCaseNum: apiFoxTotalTestCaseNum, totalNumList: apiFoxTotalNumList }}
+              />
+              <Tree {...{ dataList: apiFoxTestItemList, totalNumList: apiFoxTotalNumList, statusList, addStatus, subStatus }} />
+              {/* <HistoryTrend {...{ historyXAxis, passNumList, failedNumList, skipNumList }} /> */}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  if (apiFoxTotalTestCaseNum && !serverURL) {
+    return (
+      <div className="dashboard">
+        <div className="content">
+          {/* <div className="widgets-grid"> */}
+          <div className="widgets-grid_col">
+            <Summary
+              title={testJobName ? `接口冒烟测试` : ""}
+              time={endTime ? `${startTime} ~ ${endTime}(${durationToString(duration)})` : startTime}
+              {...{ totalTestCaseNum: apiFoxTotalTestCaseNum, totalNumList: apiFoxTotalNumList }}
+            />
+            {/* <Tree {...{ dataList: apiFoxTestItemList, totalNumList: apiFoxTotalNumList, statusList, addStatus, subStatus }} /> */}
+            {/* <HistoryTrend {...{ historyXAxis, passNumList, failedNumList, skipNumList }} /> */}
+          </div>
+          <div className="widgets-grid_col">
+            <Tree {...{ dataList: apiFoxTestItemList, totalNumList: apiFoxTotalNumList, statusList, addStatus, subStatus }} />
+          </div>
+          {/* </div> */}
+        </div>
+      </div>
+    );
+  }
+
+  return null;
 }
 
 export default connect(

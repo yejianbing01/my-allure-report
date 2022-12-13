@@ -14,7 +14,7 @@ HistoryTrend.propTypes = {
 export default function HistoryTrend({ historyXAxis, passNumList, failedNumList, skipNumList }) {
   const option = {
     title: {
-      text: "趋势",
+      text: "历史记录",
       textStyle: {
         fontSize: "21px",
         fontWeight: 200,

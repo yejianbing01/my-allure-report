@@ -33,6 +33,7 @@ function CollapseItem(props) {
     <div
       className="collapse-item"
       onClick={(event) => {
+        if (!id) return;
         selectTestCase({ id });
         handleClick(event);
       }}
