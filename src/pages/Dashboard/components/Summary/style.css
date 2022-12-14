@@ -28,6 +28,8 @@
 .summary-stats .summary-stats_title h2 {
   color: #000;
   word-wrap: break-word;
+  font-size: 30px;
+  font-weight: 900;
 }
 
 .summary-stats .summary-stats_title p {

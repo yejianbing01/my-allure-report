@@ -51,7 +51,7 @@ export function getTestResult({ testTaskId }) {
       getTestTaskDetail({ testTaskId }),
       findTestTreeList({ testTaskId }).then((dataList) => dataList.map((data) => data.suiteTree)),
     ]);
-    const { testJobName, serverURLName, serverURL, startTime, endTime, duration, testJobId, statistics = {} } = testTaskDetail;
+    const { testJobName, serverURLName, serverURL, startTime, endTime, duration, testJobId, statistics = {}, apiFoxResultList = [] } = testTaskDetail;
 
     testResult.create({ testTaskId, suiteTreeList });
     const testSuiteList = getTestSuiteWithSummary(_.cloneDeep(testResult.testSuiteList));
@@ -118,6 +118,45 @@ export function getTestResult({ testTaskId }) {
         data: { failed: value },
       }));
 
+    // apiFox 数据处理
+    const apiFoxResult = {
+      apiFoxTotalTestCaseNum: 0,
+      apiFoxTotalNumList: [],
+      apiFoxTestItemList: [],
+    };
+    if (apiFoxResultList[0]) {
+      const apiFoxResultOrg = JSON.parse(apiFoxResultList[0].replace(/'/g, '"'))?.result;
+      const { total, pending, failed } = apiFoxResultOrg.stats.requests;
+      const failedPercent = getPercent(failed, total);
+      const skipPercent = getPercent(pending, total);
+      const passPercent = 100 - failedPercent - skipPercent;
+
+      apiFoxResult.apiFoxTotalTestCaseNum = total;
+      apiFoxResult.apiFoxTotalNumList = [
+        {
+          status: PASSED,
+          value: total - failed - pending,
+          percent: `通过${passPercent}%`,
+          selected: true,
+        },
+        {
+          status: FAILURE,
+          value: failed,
+          percent: `失败${failedPercent}%`,
+          selected: true,
+        },
+        {
+          status: SKIP,
+          value: pending,
+          percent: `跳过${skipPercent}%`,
+          selected: true,
+        },
+      ];
+
+      const testItemList = apiFoxResultOrg.failures.map((ele) => ({ name: ele.test, flag: FAILURE }));
+      apiFoxResult.apiFoxTestItemList = testItemList;
+    }
+
     dispatch({
       type: FIND_TEST_TREE_LIST,
       payload: {
@@ -150,6 +189,8 @@ export function getTestResult({ testTaskId }) {
         // 原始数据
         orgDataList: testResult.testSuiteList,
         orgSortTestItemList: sortTestItemList,
+        // apiFox测试结果
+        apiFoxResult,
       },
     });
   };
@@ -326,6 +367,8 @@ export function reducer(
     // 原始数据
     orgDataList: [],
     orgSortTestItemList: [],
+    // apiFox测试结果
+    apiFoxResult: {},
   },
   action
 ) {
