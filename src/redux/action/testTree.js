@@ -125,36 +125,42 @@ export function getTestResult({ testTaskId }) {
       apiFoxTestItemList: [],
     };
     if (apiFoxResultList[0]) {
-      const apiFoxResultOrg = JSON.parse(apiFoxResultList[0].replace(/'/g, '"'))?.result;
-      const { total, pending, failed } = apiFoxResultOrg.stats.requests;
-      const failedPercent = getPercent(failed, total);
-      const skipPercent = getPercent(pending, total);
-      const passPercent = 100 - failedPercent - skipPercent;
+      try {
+        const apiFoxResultOrg = JSON.parse(apiFoxResultList[0].replace(/'/g, '"'))?.result;
+        if (apiFoxResultOrg) {
+          const { total, pending, failed } = apiFoxResultOrg.stats.requests;
+          const failedPercent = getPercent(failed, total);
+          const skipPercent = getPercent(pending, total);
+          const passPercent = 100 - failedPercent - skipPercent;
 
-      apiFoxResult.apiFoxTotalTestCaseNum = total;
-      apiFoxResult.apiFoxTotalNumList = [
-        {
-          status: PASSED,
-          value: total - failed - pending,
-          percent: `通过${passPercent}%`,
-          selected: true,
-        },
-        {
-          status: FAILURE,
-          value: failed,
-          percent: `失败${failedPercent}%`,
-          selected: true,
-        },
-        {
-          status: SKIP,
-          value: pending,
-          percent: `跳过${skipPercent}%`,
-          selected: true,
-        },
-      ];
+          apiFoxResult.apiFoxTotalTestCaseNum = total;
+          apiFoxResult.apiFoxTotalNumList = [
+            {
+              status: PASSED,
+              value: total - failed - pending,
+              percent: `通过${passPercent}%`,
+              selected: true,
+            },
+            {
+              status: FAILURE,
+              value: failed,
+              percent: `失败${failedPercent}%`,
+              selected: true,
+            },
+            {
+              status: SKIP,
+              value: pending,
+              percent: `跳过${skipPercent}%`,
+              selected: true,
+            },
+          ];
 
-      const testItemList = apiFoxResultOrg.failures.map((ele) => ({ name: ele.test, flag: FAILURE }));
-      apiFoxResult.apiFoxTestItemList = testItemList;
+          const testItemList = apiFoxResultOrg.failures.map((ele) => ({ name: ele.test, flag: FAILURE, message: ele.message }));
+          apiFoxResult.apiFoxTestItemList = testItemList;
+        }
+      } catch (error) {
+        console.log(error);
+      }
     }
 
     dispatch({
