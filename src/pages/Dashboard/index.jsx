@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Spin } from "antd";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { findTestTaskList } from "../../redux/actions";
@@ -131,7 +132,7 @@ function Dashboard({
     );
   }
 
-  return null;
+  return <Spin style={{ margin: "50vh 40vw" }} tip="拼命加载中..." />;
 }
 
 export default connect(

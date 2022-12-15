@@ -73,7 +73,7 @@ axios.interceptors.response.use(
     }
   },
   (error) => {
-    if (error.config.isLoading !== false) {
+    if (error?.config?.isLoading !== false) {
       hideLoading();
     }
     message.error("服务端错误：" + error);

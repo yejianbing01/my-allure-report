@@ -1,4 +1,5 @@
 import React, { useCallback, useMemo } from "react";
+import { Tooltip } from "antd";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { PASSED, FAILURE, SKIP } from "../../../../config";
@@ -11,13 +12,14 @@ CollapseItem.propTypes = {
   index: PropTypes.number,
   name: PropTypes.string,
   duration: PropTypes.number,
+  message: PropTypes.string,
   id: PropTypes.string,
   selectTestCase: PropTypes.func,
 };
 
 /** 测试用例 */
 function CollapseItem(props) {
-  const { id, flag: status, index: order, name: title, duration: time, selectTestCase } = props;
+  const { id, flag: status, index: order, name: title, duration: time, message, selectTestCase } = props;
   const statusMapping = useMemo(() => ({
     [PASSED]: "collapse-item-icon_passed",
     [FAILURE]: "collapse-item-icon_failed",
@@ -41,7 +43,9 @@ function CollapseItem(props) {
       <div className="collapse-item-left">
         <span className={`collapse-item-icon ${statusMapping[status]}`}></span>
         <span className="collapse-item-order">{`${order}.`}</span>
-        <span className="collapse-item-title">{title}</span>
+        <Tooltip title={message}>
+          <span className="collapse-item-title">{title}</span>
+        </Tooltip>
       </div>
       <div className="collapse-item-right">
         <span>{durationToString(time)}</span>
