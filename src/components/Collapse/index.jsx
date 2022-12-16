@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from "react";
+import VirtualList from "react-tiny-virtual-list";
 import PropTypes from "prop-types";
 import StatusLabel from "../StatusLabel";
 import { PASSED, FAILURE, SKIP } from "../../../config";
@@ -49,7 +50,21 @@ export default function Collapse(props) {
           {duration ? <span>{durationToString(duration)}</span> : ""}
         </div>
       </div>
-      <div className="collapse-content">{expanded ? children : null}</div>
+      <div className="collapse-content">
+        {expanded ? (
+          <VirtualList
+            width="100%"
+            height={children.length * 36}
+            itemCount={children.length}
+            itemSize={35}
+            renderItem={({ index, style }) => (
+              <div key={index} style={style}>
+                {children[index]}
+              </div>
+            )}
+          />
+        ) : null}
+      </div>
     </div>
   );
 }
