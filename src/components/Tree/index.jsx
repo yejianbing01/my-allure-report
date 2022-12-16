@@ -50,9 +50,9 @@ function CollapseRender(props) {
   const { children, tests, hooks, title, index, type, testCaseSummary } = props;
   if (type === TEST_SUITE) {
     const getChildren = () => {
-      const hookList = hooks?.map((hook, hookIndex) => <CollapseItem key={hookIndex} index={hookIndex} {...hook} />);
-      const testList = tests?.map((test, testIndex) => <CollapseItem key={testIndex} index={testIndex} {...test} />);
-      const childrenList = children?.map((data, childrenIndex) => CollapseRender({ index: `${index}${childrenIndex}`, ...data }));
+      const hookList = hooks?.map((hook, hookIndex) => <CollapseItem key={hookIndex} index={hookIndex} {...hook} />) || [];
+      const testList = tests?.map((test, testIndex) => <CollapseItem key={testIndex} index={testIndex} {...test} />) || [];
+      const childrenList = children?.map((data, childrenIndex) => CollapseRender({ index: `${index}${childrenIndex}`, ...data })) || [];
       return [...hookList, ...testList, ...childrenList];
     };
     return (
