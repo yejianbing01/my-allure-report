@@ -54,7 +54,7 @@ export function getTestTaskDetail({ testTaskId }) {
                     success
                     message
                     data {
-                      id,duration,startTime,endTime,testJobId,testJobName,serverURLName,serverURL,statistics{blocker,critical,normal,minor,trivial},apiFoxResultList
+                      id,duration,startTime,endTime,testJobId,testJobName,serverURLName,serverURL,statistics{blocker,critical,normal,minor,trivial}
                     }
                 }
             `;
@@ -76,7 +76,7 @@ export function findTestTaskList({ testJobId }) {
                     success
                     message
                     dataList {
-                      execNo,statistics{passes, pending, blocker, critical, normal, minor, trivial,total},apiFoxResultList
+                      execNo,statistics{passes, pending, blocker, critical, normal, minor, trivial,total}
                     }
                 }
             `;

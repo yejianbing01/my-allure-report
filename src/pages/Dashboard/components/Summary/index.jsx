@@ -31,7 +31,7 @@ export default function Summary(props) {
         radius: ["40%", "70%"],
         avoidLabelOverlap: true,
         itemStyle: {
-          borderRadius: 10,
+          // borderRadius: 10,
           borderColor: "#fff",
           borderWidth: 2,
         },

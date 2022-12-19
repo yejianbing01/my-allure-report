@@ -49,6 +49,12 @@ export default function Tree(props) {
 function CollapseRender(props) {
   const { children, tests, hooks, title, index, type, testCaseSummary } = props;
   if (type === TEST_SUITE) {
+    const getChildren = () => {
+      const hookList = hooks?.map((hook, hookIndex) => <CollapseItem key={hookIndex} index={hookIndex} {...hook} />) || [];
+      const testList = tests?.map((test, testIndex) => <CollapseItem key={testIndex} index={testIndex} {...test} />) || [];
+      const childrenList = children?.map((data, childrenIndex) => CollapseRender({ index: `${index}${childrenIndex}`, ...data })) || [];
+      return [...hookList, ...testList, ...childrenList];
+    };
     return (
       <Collapse
         key={index}
@@ -57,13 +63,7 @@ function CollapseRender(props) {
         failedNum={testCaseSummary?.FAILURE?.num}
         skipNum={testCaseSummary?.SKIP?.num}
       >
-        {hooks?.map((hook, hookIndex) => (
-          <CollapseItem key={hookIndex} index={hookIndex} {...hook} />
-        ))}
-        {tests?.map((test, testIndex) => (
-          <CollapseItem key={testIndex} index={testIndex} {...test} />
-        ))}
-        {children?.map((data, childrenIndex) => CollapseRender({ index: `${index}${childrenIndex}`, ...data }))}
+        {getChildren()}
       </Collapse>
     );
   } else {
