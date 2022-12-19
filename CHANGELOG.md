@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.12](https://git.hzdlsoft.com/autotest/autotest-report/compare/v1.2.11...v1.2.12) (2022-12-19)
+
+
+### Features
+
+* 增加apifox测试结果显示 ([dc0cb24](https://git.hzdlsoft.com/autotest/autotest-report/commit/dc0cb2462b5e0f8c2da53a9d6b3dac2d8fe3f525))
+
+
+### Bug Fixes
+
+* 测试任务标题显示异常 ([c4e1042](https://git.hzdlsoft.com/autotest/autotest-report/commit/c4e1042c42878dc763cc1dcf2de5d9085431566d))
+* 解决长列表卡顿问题 ([fe26b23](https://git.hzdlsoft.com/autotest/autotest-report/commit/fe26b2345892b26c469e199dd3da98cb8daccaa7))
+* 媒体查询样式调整 ([7970628](https://git.hzdlsoft.com/autotest/autotest-report/commit/79706282a51152953a5b2c16ae9f68cde76a86b7))
+* 通过率计算问题 ([6e7ceb8](https://git.hzdlsoft.com/autotest/autotest-report/commit/6e7ceb8dcfa74a5729a00f7890528abbf453b491))
+* 通过率统计问题 ([86fdb7c](https://git.hzdlsoft.com/autotest/autotest-report/commit/86fdb7c86bf55ddbe6ceeb75da920b895809bf97))
+* 图表显示问题修复 ([0e81ea5](https://git.hzdlsoft.com/autotest/autotest-report/commit/0e81ea56094f7cff8d287b7414cf0c6ed2b291c9))
+* 修复没有apifox的测试结果显示异常问题 ([2e5c761](https://git.hzdlsoft.com/autotest/autotest-report/commit/2e5c7613e7c2d3a37592ac7329ccdf6d33ac308b))
+* apifox测试用例通过率计算错误修改 ([b842cb4](https://git.hzdlsoft.com/autotest/autotest-report/commit/b842cb4e2943b9966cb761dd133e5c9000938d23))
+
 ### [1.2.11](https://git.hzdlsoft.com/autotest/autotest-report/compare/v1.2.10...v1.2.11) (2022-11-24)
 
 
