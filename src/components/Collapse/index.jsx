@@ -42,7 +42,7 @@ export default function Collapse(props) {
     ) : (
       <VirtualList
         width="100%"
-        height={children.length * 36}
+        height={children.length * 35 >= document.documentElement.clientHeight ? document.documentElement.clientHeight : children.length * 35}
         itemCount={children.length}
         itemSize={35}
         renderItem={({ index, style }) => (
