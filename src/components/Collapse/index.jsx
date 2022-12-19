@@ -21,7 +21,6 @@ Collapse.propTypes = {
 /** 折叠面板 */
 export default function Collapse(props) {
   const { title, passedNum, failedNum, skipNum, duration, children } = props;
-
   const [expanded, setExpanded] = useState(false);
 
   const handleClick = useCallback((e) => {
@@ -35,6 +34,25 @@ export default function Collapse(props) {
     }
     setExpanded(!expanded);
   }, []);
+
+  const handleRenderChildren = (children = []) => {
+    const hansChildren = children.some((ele) => ele.props.children);
+    return hansChildren ? (
+      children
+    ) : (
+      <VirtualList
+        width="100%"
+        height={children.length * 36}
+        itemCount={children.length}
+        itemSize={35}
+        renderItem={({ index, style }) => (
+          <div key={index} style={style}>
+            {children[index]}
+          </div>
+        )}
+      />
+    );
+  };
 
   return (
     <div className="collapse">
@@ -50,21 +68,7 @@ export default function Collapse(props) {
           {duration ? <span>{durationToString(duration)}</span> : ""}
         </div>
       </div>
-      <div className="collapse-content">
-        {expanded ? (
-          <VirtualList
-            width="100%"
-            height={children.length * 36}
-            itemCount={children.length}
-            itemSize={35}
-            renderItem={({ index, style }) => (
-              <div key={index} style={style}>
-                {children[index]}
-              </div>
-            )}
-          />
-        ) : null}
-      </div>
+      <div className="collapse-content">{expanded ? handleRenderChildren(children) : null}</div>
     </div>
   );
 }
