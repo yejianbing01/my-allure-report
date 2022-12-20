@@ -13,13 +13,13 @@ HistoryTrend.propTypes = {
 /** 历史趋势 */
 export default function HistoryTrend({ historyXAxis, passNumList, failedNumList, skipNumList }) {
   const option = {
-    title: {
-      text: "历史记录",
-      textStyle: {
-        fontSize: "21px",
-        fontWeight: 200,
-      },
-    },
+    // title: {
+    //   text: "历史记录",
+    //   textStyle: {
+    //     fontSize: "21px",
+    //     fontWeight: 200,
+    //   },
+    // },
     tooltip: {
       trigger: "axis",
       className: "historyToolTip",
@@ -95,6 +95,7 @@ export default function HistoryTrend({ historyXAxis, passNumList, failedNumList,
 
   return (
     <div className="historyTrend-box">
+      <h2>{"历史记录"}</h2>
       <Chart option={option} />
     </div>
   );
