@@ -32,8 +32,8 @@ export default function Summary(props) {
         avoidLabelOverlap: true,
         itemStyle: {
           // borderRadius: 10,
-          borderColor: "#fff",
-          borderWidth: 2,
+          // borderColor: "#fff",
+          // borderWidth: 2,
         },
         label: {
           show: true,
