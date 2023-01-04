@@ -16,7 +16,7 @@ const initState = {
 export function selectTestCase({ id }) {
   return async (dispatch) => {
     const detail = await getTestItemDetail({ id }).then((res) => {
-      const { flag: status, name: title, duration, level, testStepList, testResult } = res?.getTestItemDetail?.data || {};
+      const { flag: status, name: title, duration, level, testStepList = [], testResult = {} } = res?.getTestItemDetail?.data || {};
       return { id, status, title, duration, level, testStepList, testResult };
     });
 

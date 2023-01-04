@@ -47,7 +47,7 @@ export default function Overview(props) {
       <div className="overview-execution">
         <h3 className="overview-execution_title">执行</h3>
         <div className="overview-execution_content">
-          {testStepList.length ? (
+          {testStepList?.length ? (
             <Collapse title="测试步骤">
               {testStepList.map((testStep, index) => (
                 <Collapse key={index} title={testStep.name} duration={testStep.duration}>
