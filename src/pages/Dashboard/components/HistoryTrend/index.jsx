@@ -51,12 +51,18 @@ export default function HistoryTrend({ historyXAxis, passNumList, failedNumList,
       axisTick: {
         show: true,
       },
+      splitLine: {
+        show: false,
+      },
       splitNumber: 10,
       minInterval: 1,
     },
     xAxis: {
       type: "category",
       boundaryGap: false,
+      splitLine: {
+        show: false,
+      },
       data: historyXAxis,
     },
     series: [
