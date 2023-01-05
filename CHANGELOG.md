@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.16](https://git.hzdlsoft.com/autotest/autotest-report/compare/v1.2.15...v1.2.16) (2023-01-05)
+
+
+### Bug Fixes
+
+* 隐藏分隔线 ([0110d98](https://git.hzdlsoft.com/autotest/autotest-report/commit/0110d98a9f2f18a5b3ca8e0adde00d30a4921793))
+
 ### [1.2.15](https://git.hzdlsoft.com/autotest/autotest-report/compare/v1.2.14...v1.2.15) (2023-01-04)
 
 
