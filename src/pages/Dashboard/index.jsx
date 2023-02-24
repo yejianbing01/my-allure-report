@@ -51,7 +51,7 @@ function Dashboard({
           <div className="widgets-grid">
             <div className="widgets-grid_col">
               <Summary
-                subTitle={testJobName ? `${testJobName}(${serverURL})` : ""}
+                subTitle={testJobName + (serverURL ? `(${serverURL})` : "")}
                 time={endTime ? `${startTime} ~ ${endTime}(${durationToString(duration)})` : startTime}
                 {...{ totalTestCaseNum, totalNumList }}
               />
