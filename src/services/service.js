@@ -7,16 +7,6 @@ import { post } from "../utils/request";
  */
 export function findTestTreeList({ testTaskId }) {
   const query = `
-            findTestTreeList: findTestTreeList(
-                search: {testTaskId:"${testTaskId}"}
-            ){
-                success
-                message
-                dataList {
-                    id,
-                    suiteTree
-                }
-            }
         `;
 
   return post(`query {${query}}`).then((res) => res.data.findTestTreeList.dataList);
@@ -28,15 +18,6 @@ export function findTestTreeList({ testTaskId }) {
  */
 export function getTestItemDetail({ id }) {
   const query = `
-          getTestItemDetail:getTestItemDetail(
-                  search:{id:"${id}"},
-              ){
-                  success
-                  message
-                  data {
-                    id,name,type,flag,level,retries,duration,testResult{data},testStepList{name,content,duration}
-                  }
-              }
           `;
 
   return post(`query {${query}}`).then((res) => res.data);
@@ -48,15 +29,6 @@ export function getTestItemDetail({ id }) {
  */
 export function getTestTaskDetail({ testTaskId }) {
   const query = `
-            getTestTaskDetail:getTestTaskDetail(
-                search:{id:"${testTaskId}"},
-                ){
-                    success
-                    message
-                    data {
-                      id,duration,startTime,endTime,testJobId,testJobName,serverURLName,serverURL,statistics{blocker,critical,normal,minor,trivial}
-                    }
-                }
             `;
 
   return post(`query {${query}}`).then((res) => res.data.getTestTaskDetail.data);
@@ -69,16 +41,6 @@ export function getTestTaskDetail({ testTaskId }) {
  */
 export function findTestTaskList({ testJobId }) {
   const query = `
-            findTestTaskList:findTestTaskList(
-                search:{testJobId:"${testJobId}"},
-                sort:{execNo:DESC}
-                ){
-                    success
-                    message
-                    dataList {
-                      execNo,statistics{passes, pending, blocker, critical, normal, minor, trivial,total}
-                    }
-                }
             `;
 
   return post(`query {${query}}`).then((res) => res.data.findTestTaskList.dataList);
