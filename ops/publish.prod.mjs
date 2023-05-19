@@ -10,9 +10,9 @@ import { fs, $ } from "zx";
   const containerName = "report-production";
   // 生产服务器配置
   const remoteServer = {
-    dockerImagesPath: "/root/docker-images",
-    ip: "119.3.0.226",
-    sshPort: "9231",
+    dockerImagesPath: "",
+    ip: "",
+    sshPort: "",
   };
   // 发版机（192.168.0.123）机器配置
   const clientDockerPath = "/root/docker-images/";
